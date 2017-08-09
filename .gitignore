@@ -100,3 +100,8 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 target/*
+
+.project
+.classpath
+.settings
+
