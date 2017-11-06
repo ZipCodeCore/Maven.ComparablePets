@@ -1,7 +1,6 @@
 package io.zipcoder.pets;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -17,10 +16,7 @@ public class Main {
         int numOfPets = sc.nextInt();
 
 
-//        userPets.add(new Fish("joe"));
-//        userPets.add(new Dog("joe"));
-//        userPets.add(new Cat("joe"));
-//        userPets.add(new Cat("zebra"));
+
 
         for (int i = 0; i < numOfPets; i++) {
             System.out.println("What type of pet do you have?");
@@ -38,7 +34,7 @@ public class Main {
 
 
         for (Pets pets : userPets) {
-            System.out.println(pets.getName() + " goes " + pets.getClass().getName());
+            System.out.println(pets.getNames() + " goes " + pets.getClass().getName());
         }
 
         System.out.println("\n");
@@ -46,6 +42,6 @@ public class Main {
         Collections.sort(userPets);
 
         for (Pets pets : userPets) {
-            System.out.println(pets.getName() + " goes " + pets.getClass().getName());
+            System.out.println(pets.getNames() + " goes " + pets.getClass().getName());
     }
 }}

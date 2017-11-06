@@ -3,8 +3,6 @@ package io.zipcoder.pets;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class CatTest {
     Cat kiki=new Cat("kiki");
     @Test
@@ -22,7 +20,7 @@ public class CatTest {
     public void getNameTest(){
 
         String expected = "kiki";
-        String actual =kiki.getName();
+        String actual =kiki.getNames();
         Assert.assertEquals(expected, actual);
     }
 
@@ -31,7 +29,7 @@ public class CatTest {
 
         String expected = "lili";
         kiki.setName("lili");
-        String actual = kiki.getName();
+        String actual = kiki.getNames();
         Assert.assertEquals(expected, actual);
     }
 

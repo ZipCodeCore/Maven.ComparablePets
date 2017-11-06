@@ -3,8 +3,6 @@ package io.zipcoder.pets;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class FishTest {
     Fish flipper =new Fish("flipper");
     @Test
@@ -22,7 +20,7 @@ public class FishTest {
     public void getNameTest(){
 
         String expected = "flipper";
-        String actual =flipper.getName();
+        String actual =flipper.getNames();
         Assert.assertEquals(expected, actual);
     }
 
@@ -31,7 +29,7 @@ public class FishTest {
 
         String expected = "goldie";
         flipper.setName("goldie");
-        String actual = flipper.getName();
+        String actual = flipper.getNames();
         Assert.assertEquals(expected, actual);
     }
 }
