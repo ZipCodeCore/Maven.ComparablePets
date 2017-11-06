@@ -20,7 +20,7 @@ public abstract class Pets implements Comparable<Pets> {
 
     public int compareTo(Pets other) {
         if (this.name.compareTo(other.name) == 0) {
-            this.getClass().equals(other.getClass());
+           return this.getClass().getName().compareTo(other.getClass().getName());
         }
 
         return this.name.compareTo(other.name);
