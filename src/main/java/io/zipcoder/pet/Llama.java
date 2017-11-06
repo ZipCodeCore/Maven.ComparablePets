@@ -1,4 +1,6 @@
-package io.zipcoder;
+package io.zipcoder.pet;
+
+import io.zipcoder.pet.Pet;
 
 public class Llama extends Pet {
 

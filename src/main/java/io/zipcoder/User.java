@@ -1,5 +1,7 @@
 package io.zipcoder;
 
+import io.zipcoder.pet.Pet;
+
 import java.util.ArrayList;
 
 public class User {

@@ -1,5 +1,10 @@
 package io.zipcoder;
 
+import io.zipcoder.pet.Cat;
+import io.zipcoder.pet.Dog;
+import io.zipcoder.pet.Llama;
+import io.zipcoder.pet.Pet;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

@@ -1,6 +1,8 @@
-package io.zipcoder;
+package io.zipcoder.pet;
 
-public class Dog extends Pet{
+import io.zipcoder.pet.Pet;
+
+public class Dog extends Pet {
 
 
 //    public Dog(String name) {
