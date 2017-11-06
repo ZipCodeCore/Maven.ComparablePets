@@ -1,13 +1,10 @@
 package io.zipcoder;
 
-
 import io.zipcoder.pets.Cat;
 import io.zipcoder.pets.Dog;
 import io.zipcoder.pets.Llama;
 import io.zipcoder.pets.Pets;
-
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Application {
 
@@ -17,14 +14,31 @@ public class Application {
 
         User newuser = new User(getName());
         setPets(newuser);
+        sortPets(newuser);
         printinfo(newuser);
+    }
+
+    private void sortPets(User user) {
+        System.out.println("How would you like to sort your pets? Name or Type");
+        String input = userinput.next();
+
+        if("name".equalsIgnoreCase(input)){
+            Collections.sort(user.pets);
+        }else if ("type".equalsIgnoreCase(input)){
+            Comparator<Pets> comparator = new PetChecker();
+            Collections.sort(user.pets,comparator);
+        }
+        else{
+            System.out.println("Disrespectful");
+        }
 
     }
 
+
     private void printinfo(User newuser) {
-        ArrayList<Pets> userpets = newuser.getPets();
+        ArrayList <Pets> userpets = newuser.getPets();
         System.out.println(newuser.getName() + " has " + newuser.pets.size() + " pets.");
-        for(Pets pets : userpets){
+        for (Pets pets : userpets) {
             System.out.println("\t" + pets.tostring());
         }
     }

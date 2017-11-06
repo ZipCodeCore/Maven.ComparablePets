@@ -4,7 +4,7 @@ public class Llama extends Pets{
 
     @Override
     public String speak(){
-        return "weeShnaw";
+        return "weeshnaw";
     }
 
     @Override
