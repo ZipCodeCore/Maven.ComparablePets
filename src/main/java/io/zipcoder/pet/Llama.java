@@ -1,16 +1,9 @@
 package io.zipcoder.pet;
 
-import io.zipcoder.pet.Pet;
-
 public class Llama extends Pet {
-
-//    public Llama(String name) {
-//        super(name);
-//    }
-
     @Override
     public String speak() {
-        return "weeshnaw";
+        return "*spit*";
     }
 
     public String toString() {

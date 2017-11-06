@@ -1,24 +1,40 @@
 package io.zipcoder;
-
-import io.zipcoder.pet.Cat;
-import io.zipcoder.pet.Dog;
-import io.zipcoder.pet.Llama;
-import io.zipcoder.pet.Pet;
-
-import java.util.ArrayList;
-import java.util.Scanner;
+import io.zipcoder.pet.*;
+import java.util.*;
 
 public class Application {
 
-    static Scanner scan = new Scanner(System.in);
+    Scanner scan = new Scanner(System.in);
 
     public void start() {
+        User user = new User(getUserName());
+        setPets(user);
+        sortPets(user);
+        printInfo(user);
+    }
 
+    public String getUserName(){
         System.out.println("What is your name?");
         String input = scan.next();
-        User user = new User(input);
-        setPets(user);
-        printInfo(user);
+        return input;
+    }
+
+    public void sortPets(User user){
+        System.out.println("How would you like to sort your pets? (Name, Type)");
+        boolean flag = true;
+        while(flag) {
+            String input = scan.next();
+            if ("name".equalsIgnoreCase(input)) {
+                Collections.sort(user.pets);
+                flag = false;
+            } else if ("type".equalsIgnoreCase(input)) {
+                Comparator<Pet> classSort = new Checker();
+                Collections.sort(user.pets, classSort);
+                flag = false;
+            } else {
+                System.out.println("Invalid input");
+            }
+        }
     }
 
     public void printInfo(User user){
@@ -28,7 +44,6 @@ public class Application {
             System.out.println("\t"+currentPet.toString());
         }
     }
-
 
     public void setPets(User user) {
         System.out.println("How many pets do you have?");
@@ -45,7 +60,6 @@ public class Application {
         System.out.println("What is it's name?");
         String name = scan.next();
         newPet.setName(name);
-        //System.out.println(name +" says "+newPet.speak());
         return newPet;
     }
 
@@ -59,8 +73,12 @@ public class Application {
             case "cat":
                 petOutput = new Cat();
                 break;
-            default:
+            case "llama":
                 petOutput = new Llama();
+                break;
+            default:
+                System.out.println("Invalid input");
+                petOutput = returnPetType();
         }
         return petOutput;
     }
@@ -80,6 +98,4 @@ public class Application {
         }
         return output;
     }
-
-
 }
