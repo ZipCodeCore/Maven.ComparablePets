@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
+    enum PetType {CAT, DOG, FISH, PANGOLIN}
 
     public static void main(String[] args) {
 
@@ -16,19 +17,24 @@ public class Main {
         int numOfPets = sc.nextInt();
 
 
-
-
         for (int i = 0; i < numOfPets; i++) {
             System.out.println("What type of pet do you have?");
             String petType = sc.next();
             System.out.println("What is your pets name?");
             String petName = sc.next();
-            if ("Dog".equalsIgnoreCase(petType)) {
-                userPets.add(new Dog(petName));
-            } else if ("Cat".equalsIgnoreCase(petType)) {
-                userPets.add(new Cat(petName));
-            } else if ("Fish".equalsIgnoreCase(petType)) {
-                userPets.add(new Fish(petName));
+            switch (PetType.valueOf(petType.toUpperCase())) {
+                case DOG:
+                    userPets.add(new Dog(petName));
+                    break;
+                case CAT:
+                    userPets.add(new Cat(petName));
+                    break;
+                case FISH:
+                    userPets.add(new Fish(petName));
+                    break;
+                case PANGOLIN:
+                    userPets.add(new Pangolin(petName));
+                    break;
             }
         }
 
@@ -39,9 +45,12 @@ public class Main {
 
         System.out.println("\n");
 
-        Collections.sort(userPets);
+        //Collections.sort(userPets);
 
         for (Pets pets : userPets) {
             System.out.println(pets.getNames() + " goes " + pets.getClass().getName());
+        }
+
+
     }
-}}
+}

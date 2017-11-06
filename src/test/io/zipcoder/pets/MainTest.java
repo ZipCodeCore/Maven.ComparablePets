@@ -1,5 +1,6 @@
 package io.zipcoder.pets;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -11,24 +12,24 @@ public class MainTest {
 
     ArrayList<Pets> userPets = new ArrayList<Pets>();
 
+    String expected="joe is Cat\njoe is Dog\njoe is Fish\nzebra is Cat\n";
+
     userPets.add(new Fish("joe"));
     userPets.add(new Dog("joe"));
     userPets.add(new Cat("joe"));
     userPets.add(new Cat("zebra"));
 
-    for (Pets pets : userPets) {
-        System.out.println(pets.getNames() + " goes " + pets.getClass().getName());
+    String actual="";
+
+    //Collections.sort(userPets);
+
+    for (Pets pets : userPets)
+        actual+=pets.getNames() + " is " + pets.getClass().getSimpleName()+"\n";
+
+    Assert.assertEquals(expected, actual);
     }
 
-    System.out.println("\n");
 
-    Collections.sort(userPets);
-
-    for (Pets pets : userPets) {
-        System.out.println(pets.getNames() + " goes " + pets.getClass().getName());
-    }
-
-}
 
     @Test
     public void sortingTestComparator(){
@@ -38,19 +39,16 @@ public class MainTest {
         userPets.add(new Fish("joe"));
         userPets.add(new Dog("joe"));
         userPets.add(new Cat("joe"));
-        userPets.add(new Cat("zabra"));
+        userPets.add(new Cat("zebra"));
+        userPets.add(new Cat("ezekiel"));
+        userPets.add(new Dog("jacob"));
 
-        for (Pets pets : userPets) {
-            System.out.println(pets.getNames() + " goes " + pets.getClass().getName());
-        }
-
-        System.out.println("\n");
-
+String expected ="Cat is ezekiel\nCat is joe\nCat is zebra\nDog is jacob\nDog is joe\nFish is joe\n";
         Collections.sort(userPets, new TypeCompare());
-
+String actual="";
         for (Pets pets : userPets) {
-            System.out.println(pets.getNames() + " goes " + pets.getClass().getName());
+            actual+=pets.getClass().getSimpleName()+ " is "+pets.getNames() +"\n";;
         }
-
+Assert.assertEquals(expected, actual);
     }
 }
