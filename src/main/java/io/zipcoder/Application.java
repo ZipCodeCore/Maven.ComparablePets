@@ -29,11 +29,10 @@ public class Application {
             Collections.sort(user.pets,comparator);
         }
         else{
-            System.out.println("Disrespectful");
+            
         }
 
     }
-
 
     private void printinfo(User newuser) {
         ArrayList <Pets> userpets = newuser.getPets();
@@ -49,8 +48,6 @@ public class Application {
     }
 
     public int getInt() {
-        System.out.println("How many pets do you have?");
-
         String input;
         int output;
         while (true) {
@@ -68,7 +65,7 @@ public class Application {
 
     public void setPets(User user) {
         System.out.println("How many pets do you have?");
-        int numberofpets = userinput.nextInt();
+        int numberofpets = getInt();
 
         for (int i = 0; i < numberofpets; i++) {
             Pets newpet = getPetInfo();
