@@ -28,11 +28,11 @@ public class Main {
             System.out.println("What is your pets name?");
             String petName = sc.next();
             if ("Dog".equalsIgnoreCase(petType)) {
-                userPets[i]=new Dog(petName);
+                userPets.add(new Dog(petName));
             } else if ("Cat".equalsIgnoreCase(petType)) {
-                userPets[i]=new Cat(petName);
+                userPets.add(new Cat(petName));
             } else if ("Fish".equalsIgnoreCase(petType)) {
-                userPets[i]=new Fish(petName);
+                userPets.add(new Fish(petName));
             }
         }
 
