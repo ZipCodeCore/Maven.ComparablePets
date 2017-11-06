@@ -26,7 +26,9 @@ public class Main {
             }
         }
 
-        Collections.sort(userPets);
+        // to invoke Comparator sort
+        Collections.sort(userPets, new CompareType());
+        //Collection.sort(userPets) -> to invoke Comparable sort.
         for (Pets pets : userPets) {
             System.out.println(pets.getName() + " goes " + pets.speak());
         }
