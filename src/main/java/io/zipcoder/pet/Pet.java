@@ -17,9 +17,12 @@ public abstract class Pet implements Comparable<Pet>{
 
     @Override
     public int compareTo(Pet comparePet){
-        int nameInt = name.compareTo(comparePet.name);
-        return nameInt == 0 ? getClass().getName()
-                .compareTo(comparePet.getClass().getName()): nameInt;
+        String petName = comparePet.name;
+        String petClassName = comparePet.getClass().getName();
+        String className = getClass().getName();
+
+        int nameInt = name.compareTo(petName);
+        return nameInt == 0 ? className.compareTo(petClassName): nameInt;
     }
 
 }

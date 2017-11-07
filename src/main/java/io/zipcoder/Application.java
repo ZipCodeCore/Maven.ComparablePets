@@ -4,7 +4,7 @@ import java.util.*;
 
 class Application {
 
-    Scanner scan = new Scanner(System.in);
+    private Scanner scan = new Scanner(System.in);
 
     void start() {
         Owner owner = new Owner(getUserName());
@@ -15,8 +15,8 @@ class Application {
 
     private String getUserName() {
         System.out.println("What is your name?");
-        String input = scan.next();
-        return input;
+        //String input = scan.next();
+        return scan.next();
     }
 
     private void setPets(Owner owner) {
