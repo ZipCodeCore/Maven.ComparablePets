@@ -2,59 +2,49 @@ package io.zipcoder;
 import io.zipcoder.pet.*;
 import java.util.*;
 
-public class Application {
+class Application {
 
     Scanner scan = new Scanner(System.in);
 
-    public void start() {
-        User user = new User(getUserName());
-        setPets(user);
-        sortPets(user);
-        printInfo(user);
+    void start() {
+        Owner owner = new Owner(getUserName());
+        setPets(owner);
+        sortPets(owner);
+        printInfo(owner);
     }
 
-    public String getUserName(){
+    private String getUserName() {
         System.out.println("What is your name?");
         String input = scan.next();
         return input;
     }
 
-    public void sortPets(User user){
-        System.out.println("How would you like to sort your pets? (Name, Type)");
-        boolean flag = true;
-        while(flag) {
-            String input = scan.next();
-            if ("name".equalsIgnoreCase(input)) {
-                Collections.sort(user.pets);
-                flag = false;
-            } else if ("type".equalsIgnoreCase(input)) {
-                Comparator<Pet> classSort = new Checker();
-                Collections.sort(user.pets, classSort);
-                flag = false;
-            } else {
-                System.out.println("Invalid input");
-            }
-        }
-    }
-
-    public void printInfo(User user){
-        ArrayList<Pet> userPets = user.getPets();
-        System.out.println(user.toString());
-        for(Pet currentPet : userPets){
-            System.out.println("\t"+currentPet.toString());
-        }
-    }
-
-    public void setPets(User user) {
+    private void setPets(Owner owner) {
         System.out.println("How many pets do you have?");
         int numberOfPets = getInt();
         for (int i = 0; i < numberOfPets; i++) {
             Pet newPet = getPetInfo();
-            user.addPet(newPet);
+            owner.addPet(newPet);
         }
     }
 
-    public Pet getPetInfo(){
+    private int getInt() {
+        String input;
+        int output;
+        while (true) {
+            input = scan.next();
+            try {
+                output = Integer.parseInt(input);
+                break;
+            } catch (Exception e) {
+                System.out.println("invalid input");
+                //continue;
+            }
+        }
+        return output;
+    }
+
+    private Pet getPetInfo() {
         System.out.println("what type of pet? (Dog,Cat,LLama)");
         Pet newPet = returnPetType();
         System.out.println("What is it's name?");
@@ -63,12 +53,12 @@ public class Application {
         return newPet;
     }
 
-    public Pet returnPetType(){
+    private Pet returnPetType() {
         String input = scan.next();
         Pet petOutput;
-        switch(input.toLowerCase()){
+        switch (input.toLowerCase()) {
             case "dog":
-                petOutput= new Dog();
+                petOutput = new Dog();
                 break;
             case "cat":
                 petOutput = new Cat();
@@ -83,19 +73,29 @@ public class Application {
         return petOutput;
     }
 
-    public int getInt(){
-        String input;
-        int output;
-        while(true){
-            input = scan.next();
-            try{
-                output = Integer.parseInt(input);
-                break;
-            }catch(Exception e){
-                System.out.println("invalid input");
-                continue;
+    private void sortPets(Owner owner) {
+        System.out.println("How would you like to sort your pets? (Name, Type)");
+        boolean flag = true;
+        while (flag) {
+            String input = scan.next();
+            if ("name".equalsIgnoreCase(input)) {
+                Collections.sort(owner.pets);
+                flag = false;
+            } else if ("type".equalsIgnoreCase(input)) {
+                Comparator<Pet> classSort = new Checker();
+                Collections.sort(owner.pets, classSort);
+                flag = false;
+            } else {
+                System.out.println("Invalid input");
             }
         }
-        return output;
+    }
+
+    private void printInfo(Owner owner) {
+        ArrayList<Pet> userPets = owner.getPets();
+        System.out.println(owner.toString());
+        for (Pet currentPet : userPets) {
+            System.out.println("\t" + currentPet.toString());
+        }
     }
 }

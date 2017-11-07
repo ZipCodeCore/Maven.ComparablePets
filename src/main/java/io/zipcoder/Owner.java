@@ -2,34 +2,35 @@ package io.zipcoder;
 import io.zipcoder.pet.Pet;
 import java.util.ArrayList;
 
-public class User {
+public class Owner {
     String name;
     ArrayList<Pet> pets = new ArrayList<Pet>();
 
-    User(String name){
+    Owner(String name){
         this.name = name;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
-    public ArrayList<Pet> getPets() {
+    ArrayList<Pet> getPets() {
         return pets;
     }
 
-    public void setPets(ArrayList<Pet> pets) {
+    void setPets(ArrayList<Pet> pets) {
         this.pets = pets;
     }
 
-    public void addPet(Pet pet){
+    void addPet(Pet pet){
         pets.add(pet);
     }
 
+    @Override
     public String toString(){
         String petS = " pets.";
         if(pets.size() == 1){

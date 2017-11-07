@@ -9,7 +9,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 public class UserTest {
-    User testUser = new User("wes");
+    Owner testOwner = new Owner("wes");
     Pet testDog = new Dog();
     Pet testCat = new Cat();
     ArrayList<Pet> pets = new ArrayList<Pet>();
@@ -18,9 +18,9 @@ public class UserTest {
     @Test
     public void nameTest(){
         String expected = "bob";
-        testUser.setName("bob");
+        testOwner.setName("bob");
 
-        String actual = testUser.getName();
+        String actual = testOwner.getName();
 
         Assert.assertEquals(expected,actual);
     }
@@ -29,12 +29,12 @@ public class UserTest {
     public void petListTest(){
         pets.add(testDog);
 
-        testUser.setPets(pets);
+        testOwner.setPets(pets);
 
-        testUser.addPet(testCat);
+        testOwner.addPet(testCat);
         String expected = "meow";
 
-        ArrayList<Pet> userPets = testUser.getPets();
+        ArrayList<Pet> userPets = testOwner.getPets();
 
         String actual = userPets.get(1).speak();
 
@@ -44,9 +44,9 @@ public class UserTest {
     @Test
     public void toStringTest(){
         String expected = "wes has 1 pet.";
-        testUser.addPet(testCat);
+        testOwner.addPet(testCat);
 
-        String actual = testUser.toString();
+        String actual = testOwner.toString();
 
         Assert.assertEquals(expected,actual);
     }
