@@ -20,7 +20,7 @@ public class FishTest {
     public void getNameTest(){
 
         String expected = "flipper";
-        String actual =flipper.getNames();
+        String actual =flipper.getName();
         Assert.assertEquals(expected, actual);
     }
 
@@ -29,7 +29,7 @@ public class FishTest {
 
         String expected = "goldie";
         flipper.setName("goldie");
-        String actual = flipper.getNames();
+        String actual = flipper.getName();
         Assert.assertEquals(expected, actual);
     }
 }

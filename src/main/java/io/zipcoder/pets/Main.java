@@ -40,16 +40,16 @@ public class Main {
 
 
         for (Pets pets : userPets) {
-            System.out.println(pets.getNames() + " goes " + pets.getClass().getName());
+            System.out.println(pets.getName() + " goes " + pets.getClass().getName());
         }
 
         System.out.println("\n");
 
-        //Collections.sort(userPets);
+        Collections.sort(userPets);
 
         for (Pets pets : userPets) {
-            System.out.println(pets.getNames() + " goes " + pets.getClass().getName());
-        }
+            System.out.println(pets.getName() + " goes " + pets.getClass().getName());
+        }/**/
 
 
     }

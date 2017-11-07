@@ -21,10 +21,11 @@ public class MainTest {
 
     String actual="";
 
-    //Collections.sort(userPets);
+
+    Collections.sort(userPets);
 
     for (Pets pets : userPets)
-        actual+=pets.getNames() + " is " + pets.getClass().getSimpleName()+"\n";
+        actual+=pets.getName() + " is " + pets.getClass().getSimpleName()+"\n";
 
     Assert.assertEquals(expected, actual);
     }
@@ -47,7 +48,7 @@ String expected ="Cat is ezekiel\nCat is joe\nCat is zebra\nDog is jacob\nDog is
         Collections.sort(userPets, new TypeCompare());
 String actual="";
         for (Pets pets : userPets) {
-            actual+=pets.getClass().getSimpleName()+ " is "+pets.getNames() +"\n";;
+            actual+=pets.getClass().getSimpleName()+ " is "+pets.getName() +"\n";;
         }
 Assert.assertEquals(expected, actual);
     }

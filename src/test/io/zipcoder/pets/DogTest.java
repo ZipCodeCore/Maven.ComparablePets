@@ -20,7 +20,7 @@ public class DogTest {
     public void getNameTest(){
 
         String expected = "bowser";
-        String actual =bowser.getNames();
+        String actual =bowser.getName();
         Assert.assertEquals(expected, actual);
     }
 
@@ -29,7 +29,7 @@ public class DogTest {
 
         String expected = "harlow";
         bowser.setName("harlow");
-        String actual = bowser.getNames();
+        String actual = bowser.getName();
         Assert.assertEquals(expected, actual);
     }
 }
