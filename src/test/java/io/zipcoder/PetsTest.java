@@ -8,7 +8,7 @@ public class PetsTest {
     @Test
     public void getName() {
         String expected = "Spot";
-        Pets pet = new Dog();
+        Pets pet = new Dog("Spot");
         pet.setName(expected);
         String actual = pet.getName();
         Assert.assertEquals(expected, actual);

@@ -2,6 +2,12 @@ package io.zipcoder;
 
 public abstract class Pets {
 
+    protected String name = "";
+
+    protected Pets() {
+        this.name = name;
+    }
+
 
     public void setName(String name) {
 

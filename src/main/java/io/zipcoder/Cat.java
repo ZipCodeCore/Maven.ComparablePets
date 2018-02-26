@@ -1,8 +1,11 @@
 package io.zipcoder;
 
-public class Cat extends Pets{
+public class Cat extends Pets {
 
+    public Cat(String name) {
+        super();
+    }
     public String speak() {
-        return null;
+        return "Hang in there.";
     }
 }
