@@ -1,5 +1,9 @@
 package io.zipcoder;
 
+public class Application
+{
 
-public class Application {
+
+
+
 }
