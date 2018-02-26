@@ -18,7 +18,7 @@ public class Cat extends Pet<Cat> {
     }
 
     @Override
-    public void speak() {
-
+    public String speak() {
+        return null;
     }
 }

@@ -18,7 +18,7 @@ public class KomodoDragon extends Pet<KomodoDragon> {
     }
 
     @Override
-    public void speak() {
-        //
+    public String speak() {
+        return null;
     }
 }

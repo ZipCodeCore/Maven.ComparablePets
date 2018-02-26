@@ -19,7 +19,7 @@ public abstract class Pet<T> implements Comparable<T> {
         this.name = name;
     }
 
-    abstract void speak();
+    abstract String speak();
 
     @Override
     public int compareTo(T o) {
