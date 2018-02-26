@@ -3,7 +3,7 @@ package io.zipcoder.pets;
 
 abstract public class Pet {
 
-    private String name;
+    protected String name;
 
     public void setName (String name){
 

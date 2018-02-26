@@ -9,10 +9,18 @@ public class Application {
    private int numberOfPets;
    private ArrayList<String> petTypes;
    private ArrayList<String> petNames;
-   private HashMap<Pet,String> listOfPets;
+   private HashMap<String,String> listOfPets;
 
    public void getPetInfo(){
 
+   }
+
+   public void buildPetMap(ArrayList<String> name, ArrayList<String> type){
+
+   }
+
+   public String getPetFromMap(String key){
+       return null;
    }
 
    public void setNumberOfPets(int numberOfPets){
@@ -23,7 +31,7 @@ public class Application {
        return this.numberOfPets;
     }
 
-    public String getPetType(){
+    public String getPetType(int index){
        return null;
     }
 
