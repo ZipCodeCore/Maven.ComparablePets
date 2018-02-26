@@ -22,4 +22,12 @@ public class BirdTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void getBirdNameTest() {
+        Bird bird = new Bird("Twitter");
+        String expected = "Twitter";
+        String actual = bird.getName();
+        Assert.assertEquals(expected, actual);
+    }
+
 }

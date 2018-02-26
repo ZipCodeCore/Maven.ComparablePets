@@ -22,4 +22,12 @@ public class DogTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void getDogNameTest() {
+        Dog dog = new Dog("Twitter");
+        String expected = "Twitter";
+        String actual = dog.getName();
+        Assert.assertEquals(expected, actual);
+    }
+
 }

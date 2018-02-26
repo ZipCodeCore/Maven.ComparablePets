@@ -22,4 +22,12 @@ public class CatTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void getCarNameTest() {
+        Cat cat = new Cat("Twitter");
+        String expected = "Twitter";
+        String actual = cat.getName();
+        Assert.assertEquals(expected, actual);
+    }
+
 }
