@@ -7,15 +7,10 @@ public class PetsTest {
 
     @Test
     public void getName() {
-
-    }
-
-    @Test
-    public void speakTest() {
-        Dog dog = new Dog();
-        dog.setName();
-        String expected = "Animal Sounds";
-        String actual = (Pet)
+        String expected = "Spot";
+        Pets pet = new Dog();
+        pet.setName(expected);
+        String actual = pet.getName();
         Assert.assertEquals(expected, actual);
     }
 }
