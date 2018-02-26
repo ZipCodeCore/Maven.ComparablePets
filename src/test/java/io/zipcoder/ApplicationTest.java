@@ -54,6 +54,22 @@ public class ApplicationTest {
         Assert.assertEquals(expected, outputStream.toString());
     }
 
+    @Test
+    public void howManyPetsYouGotDamnTest(){
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+        String in = "4";
+        InputStream input = new ByteArrayInputStream(in.getBytes());
+        System.setIn(input);
+
+        Integer amountOfPets = application.howManyPetsYouGotDamn();
+
+        String expected = "How many pets do you have?\n\nEnter the amount of pets: ";
+
+        Assert.assertEquals(expected, outputStream.toString());
+        Assert.assertEquals(in, amountOfPets.toString());
+    }
+
 
     @Test
     public void addPetInfoToListTestType1(){
