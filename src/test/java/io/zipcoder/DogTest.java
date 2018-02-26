@@ -20,4 +20,12 @@ public class DogTest {
 
     }
 
+    @Test
+    public void speakTest(){
+        Dog testDog = new Dog("Spike",2);
+        String expected = "";
+        String actual = testDog.speak();
+        Assert.assertEquals(expected, actual);
+    }
+
 }
