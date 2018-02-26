@@ -1,5 +1,6 @@
-package io.zipcoder;
+package io.zipcoder.io.zipcoder.pets;
 
+import io.zipcoder.io.zipcoder.pets.Capybara;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,9 +11,7 @@ public class CapybaraTest {
     int age;
 
     @Test
-    public void setCapyNameAndAgeTest (String newName, int newAge){
-        name = newName;
-        age = newAge;
+    public void setCapyNameAndAgeTest (){
 
         String expectedName = "";
         String actualName = testCapy.getName();
@@ -27,7 +26,7 @@ public class CapybaraTest {
     @Test
     public void speakTest(){
         Capybara testCapy = new Capybara("Patrick", 3);
-        String expected = "";
+        String expected = "woof";
         String actual = testCapy.speak();
         Assert.assertEquals(expected,actual);
     }

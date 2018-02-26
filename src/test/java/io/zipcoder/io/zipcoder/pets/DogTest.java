@@ -1,5 +1,6 @@
-package io.zipcoder;
+package io.zipcoder.io.zipcoder.pets;
 
+import io.zipcoder.io.zipcoder.pets.Dog;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -23,7 +24,7 @@ public class DogTest {
     @Test
     public void speakTest(){
         Dog testDog = new Dog("Spike",2);
-        String expected = "";
+        String expected = "Spike";
         String actual = testDog.speak();
         Assert.assertEquals(expected, actual);
     }
