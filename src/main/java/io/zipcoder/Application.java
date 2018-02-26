@@ -25,7 +25,13 @@ public class Application {
         petArrayList.add(petToAdd);
     }
 
-    public String printListOfAllPets() {
+    public static String printListOfAllPets() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < petArrayList.size(); i++) {
+            stringBuilder.append(petArrayList.get(i).getName());
+            stringBuilder.append(" says " + petArrayList.get(i).speak());
+            stringBuilder.append("\n");
+        }
         return null;
     }
 
@@ -46,10 +52,7 @@ public class Application {
                 addPetToArrayList(new Bird(nameOfPet));
             }
         }
-        // TODO:
-        // 1. Ask user how many pets, store that number and use it to determine how many times for loop runs
-        // 2. Ask user for type of pet and name, separated by comma and petArrayList.add(pet)
-        // 3. Need method for formatting and detecting invalid input
+        System.out.println(printListOfAllPets());
     }
 
 }
