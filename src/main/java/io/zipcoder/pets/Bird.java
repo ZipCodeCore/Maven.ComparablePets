@@ -8,14 +8,8 @@ public class Bird extends Pet {
         super(name);
     }
 
-    @Override
-    public String getName() {
-        return super.getName();
-    }
-
-    @Override
     public String speak() {
-        return super.speak();
+        return "Caw";
     }
 
 }

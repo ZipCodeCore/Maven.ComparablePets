@@ -2,11 +2,11 @@ package io.zipcoder.pets;
 
 public abstract class Pet {
 
-    private String name;
+    protected String name;
 
-   public Pet(String name) {
-       this.name = name;
-   }
+    public Pet(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;
@@ -16,8 +16,6 @@ public abstract class Pet {
         this.name = name;
     }
 
-    public String speak() {
-        return null;
-    }
+    abstract public String speak();
 
 }
