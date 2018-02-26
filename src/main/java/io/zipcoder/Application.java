@@ -1,10 +1,47 @@
 package io.zipcoder;
 
 
-import java.util.Scanner;
+import io.zipcoder.pets.Pet;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Application {
-    Scanner
+
+    private int numberOfPets = 0;
+
+    private ArrayList<String> petTypes = new ArrayList<String>();
+    private ArrayList<String> petNames = new ArrayList<String>();
+
+    private HashMap<Pet, String> listOfPets = new HashMap<Pet, String>();
+
+    public void getPetInfo(){
+
+    }
+
+    public void setNumberOfPets(int numberOfPets) {
+
+    }
+
+    public int getNumberOfPets(){
+        return 0;
+    }
+
+    public String getPetType(){
+        return null;
+    }
+
+    public void setPetType(){
+
+    }
+
+    public String getPetName(){
+        return null;
+    }
+
+    public void setPetName(){
+
+    }
 
 
 }
