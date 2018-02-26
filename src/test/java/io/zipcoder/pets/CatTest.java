@@ -13,4 +13,13 @@ public class CatTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void setCarNameTest() {
+        Cat cat = new Cat("Twitter");
+        cat.setName("Tweet");
+        String expected = "Tweet";
+        String actual = cat.getName();
+        Assert.assertEquals(expected, actual);
+    }
+
 }

@@ -13,4 +13,13 @@ public class BirdTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void setBirdNameTest() {
+        Bird bird = new Bird("Twitter");
+        bird.setName("Tweet");
+        String expected = "Tweet";
+        String actual = bird.getName();
+        Assert.assertEquals(expected, actual);
+    }
+
 }
