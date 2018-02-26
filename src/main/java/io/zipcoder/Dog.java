@@ -3,9 +3,10 @@ package io.zipcoder;
 public class Dog {
 
     private String name;
+    public Dog(){}
 
-    public String speak() {
-        return null;
+    public Dog(String name) {
+        super();
     }
 
     public void setName(String name) {
@@ -14,5 +15,10 @@ public class Dog {
 
     public String getName() {
         return name;
+    }
+
+
+    public String speak() {
+        return "I'm such a wimp! I'm running from a cat!";
     }
 }

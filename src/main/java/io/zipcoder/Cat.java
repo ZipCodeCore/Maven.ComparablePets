@@ -1,9 +1,10 @@
 package io.zipcoder;
 
 public class Cat {
+    public Cat(){}
 
-    public String speak() {
-        return null;
+    public Cat(String name) {
+        super();
     }
 
     public void setName(String name) {
@@ -12,5 +13,9 @@ public class Cat {
 
     public String getName() {
         return null;
+    }
+
+    public String speak() {
+        return "Hang in there.";
     }
 }
