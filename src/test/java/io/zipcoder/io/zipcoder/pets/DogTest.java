@@ -9,7 +9,7 @@ public class DogTest {
     Dog testDog = new Dog("testDog", 2);
 
     @Test
-    public void getDogNameAndAgeTest(){
+    public void setDogNameAndAgeTest(){
         String expectedName = "testDog";
         String actualName = testDog.getName();
 

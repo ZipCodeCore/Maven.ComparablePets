@@ -1,32 +1,30 @@
 package io.zipcoder.io.zipcoder.pets;
 
 public abstract class Pet {
-    String name;
-    int age;
+    private String name;
+    private Integer age;
 
     public Pet(String name, int age){
-        name = name;
-        age = age;
-
+        this.name = null;
+        this.age = null;
     }
 
-    public int getAge(){
-        return age;
+    public Integer getAge(){
+        return null;
     }
 
     public void setAge(int newAge){
-        age = newAge;
+
     }
 
     public String getName(){
-        return name;
+        return null;
     }
 
     public void setName(String newName){
-        name = newName;
     }
 
     public String speak(){
-        return "";
+        return null;
     }
 }
