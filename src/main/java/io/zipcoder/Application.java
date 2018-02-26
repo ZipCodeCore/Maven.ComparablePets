@@ -32,15 +32,15 @@ public class Application {
             stringBuilder.append(" says " + petArrayList.get(i).speak());
             stringBuilder.append("\n");
         }
-        return null;
+        return stringBuilder.toString();
     }
 
     public static void main(String[] args) {
         System.out.println("Welcome to Pet Storage Inc.\nHow many pets do you have?");
-        int amountOfPets = input.nextInt();
+        int amountOfPets = Integer.parseInt(input.nextLine());
         System.out.println("Enter your pet's name and the type of pet separated by a space:");
+        String petNameAndTypeAsString = input.nextLine();
         for (int i = 0; i < amountOfPets; i++) {
-            String petNameAndTypeAsString = input.nextLine();
             String[] petNameAndTypeAsArray = petNameAndTypeAsString.split(" ");
             String nameOfPet = petNameAndTypeAsArray[0];
             String typeOfPet = petNameAndTypeAsArray[1].toLowerCase();
