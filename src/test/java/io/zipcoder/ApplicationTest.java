@@ -1,9 +1,20 @@
 package io.zipcoder;
 
 
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.util.ArrayList;
+
 public class ApplicationTest {
-          // App requirements / Must test
-         //getters & setters (names) (pet class)
-        // speak method
-        //
+
+
+    @Test
+    public void printPetListTest(){
+        //Given
+
+        //When
+        //Actual
+    }
+
 }
