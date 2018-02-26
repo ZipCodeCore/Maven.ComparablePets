@@ -1,11 +1,10 @@
 package io.zipcoder;
 
 
-import io.zipcoder.io.zipcoder.pets.Console;
-import io.zipcoder.io.zipcoder.pets.PetTypes;
+import io.zipcoder.pets.Console;
+import io.zipcoder.pets.PetTypes;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Application {
 
