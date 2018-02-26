@@ -13,11 +13,21 @@ public class Application {
     private ArrayList<String> petTypes = new ArrayList<String>();
     private ArrayList<String> petNames = new ArrayList<String>();
 
-    private HashMap<Pet, String> listOfPets = new HashMap<Pet, String>();
+    private HashMap<String, String> listOfPets = new HashMap<String, String>();
 
     public void getPetInfo(){
 
     }
+
+    public void buildPetMap(ArrayList<String> types, ArrayList<String> names){
+
+    }
+
+    public String getPetFromMap(String key){
+        return null;
+    }
+
+
 
     public void setNumberOfPets(int numberOfPets) {
 
@@ -27,19 +37,19 @@ public class Application {
         return 0;
     }
 
-    public String getPetType(){
+    public String getPetType(int index){
         return null;
     }
 
-    public void setPetType(){
+    public void setPetType(String petType){
 
     }
 
-    public String getPetName(){
+    public String getPetName(int index){
         return null;
     }
 
-    public void setPetName(){
+    public void setPetName(String name){
 
     }
 
