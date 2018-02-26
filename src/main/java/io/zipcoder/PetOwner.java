@@ -1,6 +1,6 @@
-package io.zipcoder.io.zipcoder.pets;
+package io.zipcoder;
 
-import io.zipcoder.io.zipcoder.pets.Pet;
+import io.zipcoder.Pets.Pet;
 
 import java.util.ArrayList;
 import java.util.List;

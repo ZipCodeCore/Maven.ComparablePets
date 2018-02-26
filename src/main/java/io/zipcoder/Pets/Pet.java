@@ -1,4 +1,4 @@
-package io.zipcoder.io.zipcoder.pets;
+package io.zipcoder.Pets;
 
 public abstract class Pet {
     private String name;

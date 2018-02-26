@@ -1,6 +1,6 @@
 package io.zipcoder.io.zipcoder.pets;
 
-import io.zipcoder.io.zipcoder.pets.Capybara;
+import io.zipcoder.Pets.Capybara;
 import org.junit.Assert;
 import org.junit.Test;
 
