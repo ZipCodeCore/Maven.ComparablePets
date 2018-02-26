@@ -6,42 +6,37 @@ import io.zipcoder.pets.Pet;
 import java.util.*;
 
 public class Application {
-    public Integer numberOfPets;
-    //public ArrayList<String> listOfPetTypes;
-    //public ArrayList<String> listOfPetNames;
-    public HashMap<String,String> listOfPets;
-    Scanner userInput = new Scanner(System.in);
+   private int numberOfPets;
+   private ArrayList<String> petTypes;
+   private ArrayList<String> petNames;
+   private HashMap<Pet,String> listOfPets;
 
-    public void getPetInfo(){
-        System.out.println("How many pets do you have?");
-        numberOfPets = userInput.nextInt();
+   public void getPetInfo(){
 
-        for(int i = 0; i< numberOfPets; i++){
-            String type;
-            String name;
-            System.out.println("What type of pet is pet " + (i+1) + "?");
-            type = userInput.nextLine();
-            System.out.println("What is the name of that "+ type +"?");
-            name = userInput.nextLine();
-            listOfPets.put(type,name);
-        }
+   }
+
+   public void setNumberOfPets(int numberOfPets){
+
     }
 
-    public
-
-    public String printPetInfo(){
-        StringBuilder builder = new StringBuilder();
-        Iterator<String> key = listOfPets.keySet().iterator();
-        while(key.hasNext()){
-            builder.append("This person has a " + key + " named " + listOfPets.get(key) + "\n");
-        }
-        return builder.toString();
+    public int getNumberOfPets(){
+       return this.numberOfPets;
     }
 
-    public static void main(String[] args) {
-        Application main = new Application();
-        main.getPetInfo();
-        System.out.println(main.printPetInfo());
+    public String getPetType(){
+       return null;
+    }
+
+    public void setPetType(String petType){
+
+    }
+
+    public String getPetName(){
+       return null;
+    }
+
+    public void setPetName(String name){
+
     }
 
 
