@@ -10,8 +10,24 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 
+/**
+ * created by Frankie on 02/26/18
+ */
 public class ApplicationTest {
     Application application = new Application();
+
+    /**
+     * All tests below contain methods that can be called from a single operation() method. For example,
+
+        public void operation(){
+        welcomeUser();
+        String type = getTypeOfPet();
+        String name = getNameOfPet();
+        ArrayList<Object> petList = fillList(type, name);
+        sortedList(petList);
+        }
+
+     */
 
     @Test
     public void welcomeUserTest() {
