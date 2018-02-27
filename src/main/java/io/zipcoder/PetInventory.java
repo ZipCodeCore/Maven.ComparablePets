@@ -17,38 +17,41 @@ public class PetInventory {
     }
 
     public void addPet(String type, String name){
-//        if(hasEntry(type)){
-//            if(type.equalsIgnoreCase("cat")){
-//                Cat aCat =new Cat(name);
-//                getArrayListForPets(type).add(aCat);
-//            }else if(type.equalsIgnoreCase("dog")){
-//                Dog aDog = new Dog(name);
-//                getArrayListForPets(type).add(aDog);
-//
-//            }else if(type.equalsIgnoreCase("otter")){
-//                Otter anOtter = new Otter(name);
-//                getArrayListForPets(type).add(anOtter);
-//
-//            }
-//
-//        }else {
-//            if(type.equalsIgnoreCase("cat")){
-//                ArrayList<Pet>cats = new ArrayList<Pet>();
-//                Cat aCat =new Cat(name);
-//                cats.add(aCat);
-//            }else if(type.equalsIgnoreCase("dog")){
-//                ArrayList<Pet>dogs = new ArrayList<Pet>();
-//                Dog aDog = new Dog(name);
-//                dogs.add(aDog);
-//
-//            }else if(type.equalsIgnoreCase("otter")){
-//                ArrayList<Pet>otters = new ArrayList<Pet>();
-//                Otter anOtter = new Otter(name);
-//                otters.add(anOtter);
-//
-//            }
-//
-//        }
+        if(hasEntry(type)){
+            if(type.equalsIgnoreCase("cat")){
+                Cat aCat =new Cat(name);
+                getArrayListForPets("Cat").add(aCat);
+                pets.put("Cat",getArrayListForPets("Cat"));
+            }else if(type.equalsIgnoreCase("dog")){
+                Dog aDog = new Dog(name);
+                getArrayListForPets(type).add(aDog);
+                pets.put("Dog",getArrayListForPets("Dog"));
+            }else if(type.equalsIgnoreCase("otter")){
+                Otter anOtter = new Otter(name);
+                getArrayListForPets("Otter").add(anOtter);
+                pets.put("Otter",getArrayListForPets("Otter"));
+            }
+
+        }else {
+            if(type.equalsIgnoreCase("cat")){
+                ArrayList<Pet>cats = new ArrayList<Pet>();
+                Cat aCat =new Cat(name);
+                cats.add(aCat);
+                pets.put("Cat",cats);
+            }else if(type.equalsIgnoreCase("dog")){
+                ArrayList<Pet>dogs = new ArrayList<Pet>();
+                Dog aDog = new Dog(name);
+                dogs.add(aDog);
+                pets.put("Dog",dogs);
+            }else if(type.equalsIgnoreCase("otter")){
+                ArrayList<Pet>otters = new ArrayList<Pet>();
+                Otter anOtter = new Otter(name);
+                otters.add(anOtter);
+                pets.put("Otter",otters);
+
+            }
+
+        }
 
 
     }
@@ -88,6 +91,12 @@ public class PetInventory {
     }
 
     public ArrayList<String> listOfPetsByName() {
+//        String str ="";
+//        Collections.sort(getAllPets());
+//        for(Pet petType: getAllPets()){
+//            str+=petType.getName()+"\n";
+//
+//        }
         ArrayList<String> petNames = new ArrayList<String>();
         for (Map.Entry<String, ArrayList<Pet>> entry : pets.entrySet()) {
             for (int i = 0; i < pets.entrySet().size()+1; i++) {
@@ -95,6 +104,7 @@ public class PetInventory {
             }
         }
         return petNames;
+
     }
 
     public ArrayList<String> listOfPetsByTypeSorted(){
@@ -117,6 +127,15 @@ public class PetInventory {
     }
     public ArrayList<Pet> getArrayListForPets(String petType){
         return pets.get(petType);
+    }
+    public ArrayList<Pet> getAllPets(){
+        ArrayList<Pet>allPets = new ArrayList<Pet>();
+        for(String keys:pets.keySet()) {
+            for (int i = 0; i < getArrayListForPets(keys).size(); i++) {
+                allPets.add(getArrayListForPets(keys).get(i));
+            }
+        }
+        return allPets;
     }
 
 

@@ -18,12 +18,12 @@ abstract public class Pet implements PetBehavior, Comparable<Pet>{
 
     public int compareTo(Pet anyPet) {
 
-        if (getName().compareTo(anyPet.getName()) > 0) {
+        if (this.name.compareTo(anyPet.name) > 0) {
             return 1;
         } else if (getName().compareTo(anyPet.getName()) < 0) {
             return -1;
         } else {
-            return getClass().getSimpleName().compareTo(anyPet.getClass().getSimpleName());
+            return this.getClass().getSimpleName().compareTo(anyPet.getClass().getSimpleName());
         }
     }
 

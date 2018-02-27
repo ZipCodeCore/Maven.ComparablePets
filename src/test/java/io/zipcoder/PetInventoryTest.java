@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class PetInventoryTest {
 
@@ -17,6 +18,7 @@ public class PetInventoryTest {
 
     @Before
     public void setup() {
+        Map<String, ArrayList<Pet>>petsTest;
         testInventory = new PetInventory();
     }
 
@@ -27,9 +29,9 @@ public class PetInventoryTest {
         Cat testCat = new Cat("Winston");
         ArrayList<Pet> testList = new ArrayList<Pet>();
         testList.add(testCat);
-        testInventory.addPet(petType, testCat.getName());
+        testInventory.addPet(petType, "Winston");
         String expected = "Winston";
-        String actual = testInventory.pets.get(petType).get(0).getName();
+        String actual = testInventory.getArrayListForPets("petType").get(0).getName();
         Assert.assertEquals(expected, actual);
     }
 
