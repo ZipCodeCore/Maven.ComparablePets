@@ -6,7 +6,7 @@ import org.junit.Test;
 public class DogTest {
 
     @Test
-    public void getNamesOfDog() {
+    public void getNamesOfDogs() {
         Dog dog = new Dog("Chance");
         String expected = "Chance";
         String actual = dog.getName();

@@ -6,9 +6,9 @@ import org.junit.Test;
 public class SnakeTest {
 
     @Test
-    public void getNamesOfSnake() {
-        Snake snake = new Snake("Kaa");
+    public void getNamesOfSnakes() {
         String expected = "Kaa";
+        Snake snake = new Snake("Kaa");
         String actual = snake.getName();
         Assert.assertEquals(expected, actual);
     }
