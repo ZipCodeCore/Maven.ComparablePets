@@ -26,6 +26,9 @@ public class Application {
                 case "cat":
                     pet = new Cat(petName);
                     break;
+                case "bunny":
+                    pet = new Bunny(petName);
+                    break;
                 default:
                     Console.println("My application does not support %s type of pets.", petType);
 

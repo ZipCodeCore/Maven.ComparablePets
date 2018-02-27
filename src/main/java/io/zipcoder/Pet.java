@@ -17,7 +17,7 @@ public abstract class Pet implements Animal {
         String petType = petClass.getSimpleName();
 
         StringBuilder sb = new StringBuilder();
-        sb.append("\n------------------------------");
+        sb.append("\n-------------------------               -----");
         sb.append("\nPet type = " + petType);
         sb.append("\nPet name = " + this.name);
         return sb.toString();

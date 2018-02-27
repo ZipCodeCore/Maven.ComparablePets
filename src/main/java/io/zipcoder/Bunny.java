@@ -1,12 +1,12 @@
 package io.zipcoder;
 
-public class Dog extends Pet {
-    public Dog(String petName) {
+public class Bunny extends Pet {
+    public Bunny(String petName) {
         super(petName);
     }
 
     @Override
     public String speak() {
-        return "Woof bro";
+        return null;
     }
 }
