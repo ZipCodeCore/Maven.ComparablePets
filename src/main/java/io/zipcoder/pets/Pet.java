@@ -27,4 +27,9 @@ public abstract class Pet implements Comparable<Pet> {
     public String speak(){
         return null;
     }
+
+    @Override
+    public String toString(){
+        return this.getClass().getSimpleName() + ": " +  name + "\n";
+    }
 }

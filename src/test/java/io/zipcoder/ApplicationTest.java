@@ -50,22 +50,56 @@ public class ApplicationTest {
     }
 
     @Test
-    public void sortTest() {
 
-        for (Pet pet : pets) {
-            System.out.println(pet.getName());
-        }
+    public void sortByNameTest(){
+
+        String expected = "[Capybara: Addison\n, Capybara: Amy\n, Cat: Biscuit\n, Dog: Cassie\n, Cat: Frederick\n, Dog:" +
+                " Henry\n, Capybara: Jaxon\n, Capybara: Vince\n]";
+
+        //String expected = "Addison\nAmy\nBiscuit\nCassie\nFrederick\nHenry\nJaxon\nVince";
+        //ArrayList<Pet> expected = new ArrayList<Pet>();
+
+//        pets.add(addison);
+//        pets.add(amy);
+//        pets.add(biscuit);
+//        pets.add(cassie);
+//        pets.add(frederick);
+//        pets.add(henry);
+//        pets.add(jaxson);
+//        pets.add(vince);
 
         Collections.sort(pets);
+        String actual = pets.toString();
 
-        for (Pet pet : pets) {
-            System.out.println(pet.getName());
-        }
+        //ArrayList<Pet> actual = pets;
 
+        Assert.assertEquals(expected, actual);
 
-            Collections.sort(pets);
-        //System.out.println(pets);
     }
 
 
-}
+
+
+    //I can have the test return an array, and check to see if that array matches the test array.
+
+
+
+//    public void sortTest() {
+//
+//        for (Pet pet : pets) {
+//            System.out.println(pet.getName());
+//        }
+//
+//        Collections.sort(pets);
+//
+//        for (Pet pet : pets) {
+//            System.out.println(pet.getName());
+//        }
+//
+//
+//            Collections.sort(pets);
+//        //System.out.println(pets);
+    }
+
+
+
