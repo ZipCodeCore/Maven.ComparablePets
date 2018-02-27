@@ -1,6 +1,6 @@
 package io.zipcoder;
 
-public class Cat extends Pets {
+public class Cat extends Pet {
 
     public Cat(){}
 

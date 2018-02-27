@@ -1,13 +1,15 @@
 package io.zipcoder;
 
-public abstract class Pets{
+import java.lang.Comparable;
+
+public abstract class Pet {
 
     protected String name;
 
     //Constructors
-    protected Pets(){}
+    protected Pet(){}
 
-    protected Pets(String name)
+    protected Pet(String name)
     {
         this.name = name;
     }

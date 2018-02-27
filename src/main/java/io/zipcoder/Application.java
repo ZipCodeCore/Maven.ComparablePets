@@ -1,102 +1,83 @@
 package io.zipcoder;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
+public class Application {
+    private ArrayList<Pet> pets = new ArrayList<>();
+    private Scanner scanner = new Scanner(System.in);
 
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
-
-public class Application
-{
-
-    public static void main(String [] args)
-    {
-
-        //ArrayList Declaration
-        ArrayList<Pets> pets = new ArrayList<Pets>();
-
-        Scanner sn = new Scanner(System.in);
-        System.out.print("How many pets do you own?: ");
-        String nAsAString = sn.nextLine();
-        int n = Integer.parseInt(nAsAString);
-
-        //Iterate through number of pets
-        for (int i = 0; i < n; i++)
-        {
-            System.out.println("What type of pet is this? ");
-            String reply = sn.nextLine();
-
-            if (reply.equalsIgnoreCase("dog"))
-            {
-                System.out.println("Cool! What is this dog's name? ");
-                String replyName = sn.nextLine();
-
-                Dog dog = new Dog(replyName);
-
-                pets.add(dog);
-
-            }
-
-            else if (reply.equalsIgnoreCase("cat"))
-            {
-                System.out.println("Cool! What is this cat's name? ");
-                String replyName = sn.nextLine();
-
-                Cat cat = new Cat(replyName);
-
-                pets.add(cat);
-            }
-
-            else if (reply.equalsIgnoreCase("bird"))
-            {
-                System.out.println("Cool! What is this bird's name? ");
-                String replyName = sn.nextLine();
-
-                Bird bird = new Bird(replyName);
-
-                pets.add(bird);
-
-            }
-
-            else if (reply.equalsIgnoreCase("snake"))
-            {
-                System.out.println("Cool! What is this snake's name? ");
-                String replyName = sn.nextLine();
-
-                Snake snake = new Snake(replyName);
-
-                pets.add(snake);
-            }
-
-
-        }
-
-        System.out.println(printList(pets));
-
-
-
-
-
-
+    public static void main(String[] args) {
+        Application application = new Application();
+        application.start();
     }
 
 
-    public static String printList(ArrayList<Pets> pets)
-    {
-        StringBuilder sb = new StringBuilder();
+    public void start() {
+        System.out.println("How many pets do you have?");
+        String numberOfPetsString = scanner.nextLine();
+        int numberOfPets = Integer.parseInt(numberOfPetsString);
 
-        for(int i = 0; i < pets.size(); i++)
-        {
-            sb.append(pets.get(i).getName());
-            sb.append(" is a ");
-            sb.append(pets.get(i).getClass().getSimpleName()+"\n");
+        for(int i=0;i<numberOfPets; i++) {
+            System.out.println("What is the type of pet?");
+            String typeOfPet = scanner.nextLine();
+
+            System.out.println("What is the name of the pet?");
+            String petName = scanner.nextLine();
+
+            Pet pet = createPet(typeOfPet, petName);
+            this.add(pet);
         }
-
-        return sb.toString();
+        printPets();
     }
 
-    //TODO:
-    //Implementing Comparator Interface and Comparabale Interface
+    public void printPets() {
+        for(Pet pet : pets) {
+            String petName = pet.getName();
+            String petType = pet.getClass().getSimpleName();
+            System.out.println("Pet name = " + petName);
+            System.out.println("Pet type = " + petType);
+        }
+    }
 
+    //method stubs do not return logic
+    public Pet[] getPets() {
+        int size = pets.size();
+        Pet[] petArray = new Pet[size];
+        for(int i=0; i<pets.size(); i++) {
+            Pet currentPet = pets.get(i);
+            petArray[i] = currentPet;
+        }
+        return petArray;
+    }
+
+
+    public void add(Pet pet) {
+        pets.add(pet);
+    }
+
+    public Pet createPet(String petType, String petName) {
+        Pet pet = null;
+        switch (petType.toLowerCase()) {
+            case "bird":
+                pet = new Bird(petName);
+                break;
+
+            case "dog":
+                pet = new Dog(petName);
+                break;
+
+            case "snake":
+                pet = new Snake(petName);
+                break;
+
+            case "cat":
+                pet = new Cat(petName);
+                break;
+        }
+        return pet;
+    }
 
 }
+

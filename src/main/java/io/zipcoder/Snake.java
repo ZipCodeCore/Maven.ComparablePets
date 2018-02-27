@@ -1,8 +1,10 @@
 package io.zipcoder;
 
-public class Snake extends Pets {
+public class Snake extends Pet {
 
 
+    public Snake() {
+    }
 
     public Snake(String name) {
         super(name);
@@ -13,8 +15,7 @@ public class Snake extends Pets {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
