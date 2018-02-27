@@ -35,6 +35,7 @@ public class Questionairre {
                 break;
         }
         PetOwner newOwner = new PetOwner(petArrayList);
+        newOwner.sort();
         String petList = "";
         for (Pet currentPet:petArrayList) {
                 petList += ("The " + currentPet.getClass().getSimpleName() + " named " + currentPet.getName()

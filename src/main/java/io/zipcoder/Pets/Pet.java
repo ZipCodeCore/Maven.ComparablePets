@@ -1,5 +1,8 @@
 package io.zipcoder.Pets;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public abstract class Pet{
 
     public String name;
@@ -33,12 +36,19 @@ public abstract class Pet{
 
     public abstract String speak();
 
-public int compareTo(Pet other) {
+    public int compareTo(Pet other) {
         // compareTo should return < 0 if this is supposed to be
         // less than other, > 0 if this is supposed to be greater than
         // other and 0 if they are supposed to be equal
         int petType = this.getClass().getSimpleName().compareTo(other.getClass().getSimpleName());
         return petType == 0 ? this.getName().compareTo(other.getName()) : petType;
-        }
+    }
+
+    public Comparator<Pet> petComparator = (pet1, pet2) -> pet1.getClass().getSimpleName() - pet2.getClass().getSimpleName();
+
+        @Override
+        Arrays.sort(pet, ){
+
+    }
 
 }
