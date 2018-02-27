@@ -16,8 +16,8 @@ public class SnakeTest {
     @Test
     public void getNameOfSnakesTest() {
 
-        Snake snake = new Snake();
-        snake.setName("Luke");
+        Snake snake = new Snake("Luke");
+
         String expected = "Luke";
         String actual = snake.getName();
 
@@ -27,7 +27,7 @@ public class SnakeTest {
 
     @Test
     public void snakeSpeakTest() {
-        Snake snake = new Snake();
+        Snake snake = new Snake("Luke");
         String expected = "hiss";
         String actual = snake.speak();
 

@@ -2,8 +2,8 @@ package io.zipcoder;
 
 public class Snake extends Pets {
 
-    public Snake () {
-
+    public Snake (String name) {
+        super(name);
     }
 
     @Override

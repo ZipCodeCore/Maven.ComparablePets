@@ -10,8 +10,8 @@ public class DogTest {
     @Test
     public void getNameOfDogsTest() {
 
-       Dog dog = new Dog();
-        dog.setName("Butch");
+       Dog dog = new Dog("Butch");
+
         String expected = "Butch";
         String actual = dog.getName();
 
@@ -21,7 +21,7 @@ public class DogTest {
 
     @Test
     public void dogSpeakTest() {
-        Dog dog = new Dog();
+        Dog dog = new Dog("");
         String expected = "bark";
         String actual = dog.speak();
 

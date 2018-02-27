@@ -1,11 +1,14 @@
 package io.zipcoder;
 
-public abstract class Pets {
+import java.util.Comparator;
+
+public abstract class Pets implements Comparable<Pets>, Comparator<Pets>{
 
     public String name;
 
 
-    public Pets() {
+    public Pets(String name) {
+        this.name = name;
 
     }
 
@@ -14,9 +17,9 @@ public abstract class Pets {
 
 
 
-    public String speak() {
-        return "I am a pet!";
-    }
+    public abstract String speak();
+
+
 
     public String getName() {
         return name;

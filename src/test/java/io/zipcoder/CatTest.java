@@ -10,8 +10,8 @@ public class CatTest {
     @Test
     public void getNameOfCatsTest() {
 
-        Cat cat = new Cat();
-        cat.setName("Felix");
+        Cat cat = new Cat("Felix");
+
         String expected = "Felix";
         String actual = cat.getName();
 
@@ -21,7 +21,7 @@ public class CatTest {
 
     @Test
     public void catSpeakTest() {
-        Cat cat = new Cat();
+        Cat cat = new Cat("Felix");
         String expected = "meow";
         String actual = cat.speak();
 
