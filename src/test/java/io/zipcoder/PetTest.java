@@ -15,11 +15,27 @@ public class PetTest {
      * and feature a name constructor that sets this.name = name;
      */
     Pet pet;
+    Dog dog;
+    Cat cat;
+    Turtle turtle;
+    ElectricMouse electricMouse;
+
+    @Test
+    public void testInheritance() {
+        Pet p = new Dog();
+        Assert.assertTrue(p instanceof Pet);
+    }
+
+    @Test
+    public void testImplementation() {
+        Pet p = new Dog();
+        Assert.assertTrue(p instanceof Animal);
+    }
 
     @Test
     public void GetNameTest1(){
         String name = "Andy";
-        pet = new Pet(name);
+        pet = new Dog(name);
 
         String nameReturn = pet.getName();
         Assert.assertEquals(nameReturn, name);
@@ -28,7 +44,7 @@ public class PetTest {
     @Test
     public void GetNameTest2(){
         String name = "Gloria";
-        pet = new Pet(name);
+        pet = new Dog(name);
 
         String nameReturn = pet.getName();
         Assert.assertEquals(nameReturn, name);
