@@ -1,4 +1,4 @@
-package io.zipcoder.io.zipcoder.pets;
+package io.zipcoder.pets;
 
 import io.zipcoder.Pets.Cat;
 import org.junit.Assert;
