@@ -36,19 +36,8 @@ public abstract class Pet{
 
     public abstract String speak();
 
-    public int compareTo(Pet other) {
-        // compareTo should return < 0 if this is supposed to be
-        // less than other, > 0 if this is supposed to be greater than
-        // other and 0 if they are supposed to be equal
-        int petType = this.getClass().getSimpleName().compareTo(other.getClass().getSimpleName());
-        return petType == 0 ? this.getName().compareTo(other.getName()) : petType;
-    }
-
-    public Comparator<Pet> petComparator = (pet1, pet2) -> pet1.getClass().getSimpleName() - pet2.getClass().getSimpleName();
-
-        @Override
-        Arrays.sort(pet, ){
-
+    public int compare(Pet p1, Pet p2){
+        return p1.getClass().getSimpleName().compareTo(p2.getClass().getSimpleName());
     }
 
 }
