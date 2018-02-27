@@ -18,7 +18,7 @@ public class Application {
         app.numberOfPets = scan.nextInt();
         scan.nextLine();
         //app.setTotalNumberOfPets(nu);
-        app.PetApplicatio();
+        app.PetApplication();
     }
     public void setTotalNumberOfPets(int numberOfPets){
         this.numberOfPets = numberOfPets;
@@ -26,7 +26,7 @@ public class Application {
     public int getTotalNumberOfPets(){
         return numberOfPets;
     }
-    public void PetApplicatio(){
+    public void PetApplication(){
 
         PetInventory inventory = new PetInventory();
         for(int i =0;i<getTotalNumberOfPets();i++){
@@ -39,7 +39,8 @@ public class Application {
 
             inventory.addPet(petType,name);
         }
-        System.out.println(inventory.listPets());
+
+        System.out.println(inventory.listnamesOrdered());
     }
 
 

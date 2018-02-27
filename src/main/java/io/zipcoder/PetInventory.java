@@ -91,20 +91,23 @@ public class PetInventory {
     }
 
     public ArrayList<String> listOfPetsByName() {
-//        String str ="";
-//        Collections.sort(getAllPets());
-//        for(Pet petType: getAllPets()){
-//            str+=petType.getName()+"\n";
-//
-//        }
         ArrayList<String> petNames = new ArrayList<String>();
         for (Map.Entry<String, ArrayList<Pet>> entry : pets.entrySet()) {
             for (int i = 0; i < pets.entrySet().size()+1; i++) {
                 petNames.add(entry.getValue().get(i).getName());
             }
         }
+        Collections.sort(petNames);
         return petNames;
 
+    }
+    public String listnamesOrdered(){
+        String str ="";
+        ArrayList<Pet>totalPets = getAllPets();
+        for(int i=0;i<totalPets.size();i++){
+            str+=totalPets.get(i).getName() + " says "+ totalPets.get(i).speak()+"\n";
+        }
+        return str;
     }
 
     public ArrayList<String> listOfPetsByTypeSorted(){
