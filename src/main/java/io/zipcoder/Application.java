@@ -6,6 +6,7 @@ import io.zipcoder.pets.Dog;
 import io.zipcoder.pets.Pet;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Application {
@@ -65,11 +66,14 @@ public class Application {
         return tempStringHolder;
     }
 
-    public static int sortLogic(Pet pet1, Pet pet2) {
-        PetSorter petSorter = new PetSorter();
-        petSorter.compare(pet1, pet2);
+    public static void nameSort(ArrayList petList) {
+        Pet[] fixedPetList = (Pet[]) petList.toArray();
+        Arrays.sort(fixedPetList, new PetNameSorter());
+    }
 
-        // sort by name and type set up, just need to implement that shit my dude
+    public static void typeSort(ArrayList petList) {
+        Pet[] fixedPetList = (Pet[]) petList.toArray();
+        Arrays.sort(fixedPetList, new PetTypeSorter());
     }
 
 }
