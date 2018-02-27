@@ -70,19 +70,19 @@ public class Application {
         return tempStringHolder;
     }
 
-    public static void nameSort(ArrayList petList) {
+    public static void nameSort(ArrayList<Pet> petList) {
         Collections.sort(petList, new PetNameSorter());
-        System.out.println("All pets organized by name:");
-        for (Object pet : petList) {
-            System.out.println(pet + "\n");
+        System.out.println("\nAll pets organized by name:");
+        for (Pet pet : petList) {
+            System.out.println(pet.getName() + " the " + pet.getClass());
         }
     }
 
-    public static void typeSort(ArrayList petList) {
+    public static void typeSort(ArrayList<Pet> petList) {
         Collections.sort(petList, new PetTypeSorter());
-        System.out.println("All pets organized by type:");
-        for (Object pet : petList) {
-            System.out.println(pet + "\n");
+        System.out.println("\nAll pets organized by type:");
+        for (Pet pet : petList) {
+            System.out.println(pet.getName() + " the " + pet.getClass());
         }
     }
 
