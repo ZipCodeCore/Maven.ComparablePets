@@ -16,13 +16,11 @@ public class Cat extends Pet {
 
     public void setName(String aCatName) {
         this.catName=aCatName;
-
     }
 
     public String getName() {
 
         return this.catName;
     }
-
 
 }

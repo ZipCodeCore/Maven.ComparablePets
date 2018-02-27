@@ -16,6 +16,7 @@ abstract public class Pet implements PetBehavior,Comparable<Pet>{
     public void setName(String aPetName) {
 
     }
+
     public int compareTo(Pet anotherPet){
         if (getName().compareTo(anotherPet.getName()) > 0) {
             return 1;
@@ -25,5 +26,6 @@ abstract public class Pet implements PetBehavior,Comparable<Pet>{
             return getClass().getSimpleName().compareTo(anotherPet.getClass().getSimpleName());
         }
     }
+
 
 }

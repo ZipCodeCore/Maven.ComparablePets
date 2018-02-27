@@ -17,110 +17,100 @@ public class PetInventoryTest {
     PetInventory petListTest;
 
     @Before
-    public void setup(){
+    public void setup() {
 
-        petListTest= new PetInventory();
+        petListTest = new PetInventory();
 
     }
 
     @Test
-    public void addPetTest(){
-        Dog myDog = new Dog("Fighter");
-        ArrayList<Pet>arrayListOfDogsTest = new ArrayList<Pet>();
+    public void addPetTest() {
+        Dog myDog = new Dog( "Fighter");
+        ArrayList<Pet> arrayListOfDogsTest = new ArrayList<Pet>();
         arrayListOfDogsTest.add(myDog);
         petListTest.pets.put("dog", arrayListOfDogsTest);
-        petListTest.addPet("dog","Sparky");
+        petListTest.addPet("dog", "Sparky");
         int expected = 2;
         int actual = petListTest.pets.get("dog").size();
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void removePetTest(){
-        Cat myCat = new Cat("Zina");
-        Cat anotherCat = new Cat("Kitty");
-        ArrayList<Pet>catsTest = new ArrayList<Pet>();
-        catsTest.add(myCat);
-        catsTest.add(anotherCat);
-        petListTest.pets.put("cat",catsTest);
-        petListTest.removePet("Kitty");
+    public void addPetTest2() {
+        petListTest.addPet("cat", "first");
+        petListTest.addPet("cat", "second");
+        petListTest.addPet("cat", "third");
+        String expected = "second";
+        String actual = petListTest.pets.get("cat").get(1).getName();
+        Assert.assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void removePetTest1() {
+        petListTest.addPet("otter", "Fire");
+        petListTest.addPet("otter", "Fury");
+        petListTest.removePet("Fire");
         int expected = 1;
-        int actual = petListTest.pets.get("cat").size();
-        System.out.println(petListTest.listPets());
-        Assert.assertEquals(expected,actual);
+        int actual = petListTest.pets.get("otter").size();
+        Assert.assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void listPetsAndSpeak() {
+        petListTest.addPet("cat", "Zina");
+        petListTest.addPet("otter", "Otty");
+
+        String expected = "Zina==>Meow!\n" +
+                "Otty==>Muahaha\n";
+
+        String actual = petListTest.listPetsAndSpeak();
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public  void listPetsTest(){
+    public void getPetType() {
+        petListTest.addPet("cat", "Zina");
+        petListTest.addPet("otter", "Otty");
+        petListTest.addPet("cat", "Tissue");
+
+        String expected = "cat";
+        String actual = petListTest.getPetType("Zina");
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void listOfPetsByNameTest() {
+        Dog myDog = new Dog("Fighter");
+        ArrayList<Pet> arrayListOfDogsTest = new ArrayList<Pet>();
+        arrayListOfDogsTest.add(myDog);
         Cat myCat = new Cat("Zina");
-        Otter myOtter = new Otter("Kitty");
-        ArrayList<Pet>catsTest = new ArrayList<Pet>();
-        ArrayList<Pet>otterTest = new ArrayList<Pet>();
+        Otter myOtter = new Otter("Otty");
+        ArrayList<Pet> catsTest = new ArrayList<Pet>();
+        ArrayList<Pet> otterTest = new ArrayList<Pet>();
         catsTest.add(myCat);
         otterTest.add(myOtter);
 
-        petListTest.addPet("cat", "Zina");
-        petListTest.addPet("otter", "Kitty");
+        petListTest.pets.put("Cat", catsTest);
+        petListTest.pets.put("Otty", otterTest);
+        petListTest.pets.put("Dog", arrayListOfDogsTest);
 
-        String expected = "Zina==>Meow!\n"+
-                "Kitty==>Muahaha\n";
+        ArrayList<String> expected = new ArrayList<String>();
+        expected.add("Fighter");
+        expected.add("Otty");
+        expected.add("Zina");
 
-        String actual = petListTest.listPets();
+        ArrayList<String> actual = petListTest.listOfPetsByName();
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void listOfPetsByTypeTest() {
+
 
 
     }
-  @Test
-    public void getPetType(){
-      Cat myCat = new Cat("Zina");
-      Otter myOtter = new Otter("Kitty");
-      ArrayList<Pet>catsTest = new ArrayList<Pet>();
-      ArrayList<Pet>otterTest = new ArrayList<Pet>();
-      catsTest.add(myCat);
-      otterTest.add(myOtter);
-
-      petListTest.pets.put("Cat",catsTest);
-      petListTest.pets.put("Kitty",otterTest);
-
-      String expected = "Cat";
-      String actual  = petListTest.getPetType("Zina");
-
-      Assert.assertEquals(expected,actual);
-
-  }
-
-  @Test
-
-    public void listOfPetsByNameTest(){
-
-      Dog myDog = new Dog("Fighter");
-      ArrayList<Pet>arrayListOfDogsTest = new ArrayList<Pet>();
-      arrayListOfDogsTest.add(myDog);
-
-      Cat myCat = new Cat("Zina");
-      Otter myOtter = new Otter("Kitty");
-      ArrayList<Pet>catsTest = new ArrayList<Pet>();
-      ArrayList<Pet>otterTest = new ArrayList<Pet>();
-      catsTest.add(myCat);
-      otterTest.add(myOtter);
-
-      petListTest.pets.put("Cat",catsTest);
-      petListTest.pets.put("Kitty",otterTest);
-      petListTest.pets.put("Dog",arrayListOfDogsTest);
-
-      ArrayList<String> expected = new ArrayList<String>();
-      expected.add("Fighter");
-      expected.add("Kitty");
-      expected.add("Zina");
-
-      ArrayList<String> actual = petListTest.listOfPetsByName();
-
-      Assert.assertEquals(expected,actual);
-
-
-  }
-
-
-
 }

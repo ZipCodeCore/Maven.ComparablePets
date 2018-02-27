@@ -14,7 +14,7 @@ public class OtterTest {
 
     @Test
     public void speakTest(){
-        String expected = "Hello";
+        String expected = "Muahaha";
         String actual = anOtter.speak();
         Assert.assertEquals(expected,actual);
     }

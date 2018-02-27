@@ -5,6 +5,7 @@ import io.zipcoder.pets.Dog;
 import io.zipcoder.pets.Otter;
 import io.zipcoder.pets.Pet;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,32 +35,32 @@ public class PetInventory {
         switch (petTypeInt) {
             case 1:
                 Cat newCat = new Cat(petName);
-                if (pets.containsKey("cat")) {
-                    pets.get("cat").add(newCat);
+                if (pets.containsKey(petType)) {
+                    pets.get(petType).add(newCat);
                 } else {
                     ArrayList<Pet> newCatList = new ArrayList<Pet>();
                     newCatList.add(newCat);
-                    pets.put("cat", newCatList);
+                    pets.put(petType, newCatList);
                 }
                 break;
             case 2:
                 Dog newDog = new Dog(petName);
-                if (pets.containsKey("dog")) {
-                    pets.get("dog").add(newDog);
+                if (pets.containsKey(petType)) {
+                    pets.get(petType).add(newDog);
                 } else {
                     ArrayList<Pet> newDogList = new ArrayList<Pet>();
                     newDogList.add(newDog);
-                    pets.put("dog", newDogList);
+                    pets.put(petType, newDogList);
                 }
                 break;
             case 3:
                 Otter newOtter = new Otter(petName);
-                if (pets.containsKey("otter")) {
-                    pets.get("otter").add(newOtter);
+                if (pets.containsKey(petType)) {
+                    pets.get(petType).add(newOtter);
                 } else {
                     ArrayList<Pet> newOtterList = new ArrayList<Pet>();
                     newOtterList.add(newOtter);
-                    pets.put("otter", newOtterList);
+                    pets.put(petType, newOtterList);
                 }
                 break;
         }
@@ -69,33 +70,45 @@ public class PetInventory {
     public void removePet(String petName) {
 
         for (Map.Entry<String, ArrayList<Pet>> entry : pets.entrySet()) {
-            for (int i = 0; i < pets.entrySet().size(); i++)
-            if (entry.getValue().get(i).getName().equalsIgnoreCase(petName)) {
-                entry.getValue().remove(i);
+            for (int i = 0; i < pets.entrySet().size(); i++) {
+                if (entry.getValue().get(i).getName().equalsIgnoreCase(petName)) {
+                    entry.getValue().remove(i);
+                }
             }
         }
     }
 
-    public String listPets() {
+
+    public String getPetType(String petName) {
+
+        for (String key : pets.keySet()) {
+            for (int i = 0; i < getPetsByType(key).size(); i++) {
+                if (getPetsByType(key).get(i).getName().equalsIgnoreCase(petName)) {
+                    return key;
+                }
+            }
+        } return null;
+    }
+
+    public String listPetsAndSpeak() {
 
         String list = "";
         Set<String> keys = pets.keySet();
         for (String i : keys) {
             for (int j = 0; j < pets.get(i).size(); j++)
-            list += pets.get(i).get(j).getName() + "==>" + pets.get(i).get(j).speak() + "\n";
+                list += pets.get(i).get(j).getName() + "==>" + pets.get(i).get(j).speak() + "\n";
         }
         return list;
 
-    }
-
-    public String getPetType(String petName) {
-        return null;
     }
 
     public ArrayList<String> listOfPetsByName() {
         return null;
     }
 
+    public ArrayList<Pet> getPetsByType(String petType) {
+        return pets.get(petType);
+    }
 
 
 }
