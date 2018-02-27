@@ -4,6 +4,7 @@ abstract public class Pet implements PetBehavior,Comparable<Pet>{
 
     private String name;
 
+
     public String speak() {
         return null;
     }

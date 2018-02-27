@@ -14,12 +14,12 @@ public class Cat extends Pet {
         return "Meow!";
     }
 
-    public void setCatName(String aCatName) {
+    public void setName(String aCatName) {
         this.catName=aCatName;
 
     }
 
-    public String getCatName() {
+    public String getName() {
 
         return this.catName;
     }

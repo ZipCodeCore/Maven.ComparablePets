@@ -21,9 +21,9 @@ public class DogTest {
     }
     @Test
     public void setDogNameTest(){
-        aDogTest.setDogName("aaaa");
+        aDogTest.setName("aaaa");
         String expected = "aaaa";
-        String actual = aDogTest.getDogName();
+        String actual = aDogTest.getName();
 
         Assert.assertEquals(expected,actual);
     }

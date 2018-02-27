@@ -22,8 +22,8 @@ public class CatTest {
     @Test
     public void setCatNameTest(){
         String expected = "Gabby";
-        aCatTest.setCatName("Gabby");
-        String actual = aCatTest.getCatName();
+        aCatTest.setName("Gabby");
+        String actual = aCatTest.getName();
         Assert.assertEquals(expected,actual);
     }
 

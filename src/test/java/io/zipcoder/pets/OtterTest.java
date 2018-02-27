@@ -20,9 +20,9 @@ public class OtterTest {
     }
     @Test
     public void setOtterNameTest(){
-        anOtter.setOtterName("Hero");
+        anOtter.setName("Hero");
         String expected  = "Hero";
-        String actual = anOtter.getOtterName();
+        String actual = anOtter.getName();
 
         Assert.assertEquals(expected,actual);
     }

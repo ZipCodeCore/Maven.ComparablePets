@@ -11,14 +11,14 @@ public class Otter extends Pet {
 
     public String speak() {
 
-        return "Hello";
+        return "Muahaha";
     }
 
-    public void setOtterName(String anOtterName) {
+    public void setName(String anOtterName) {
         this.otterName=anOtterName;
     }
 
-    public String getOtterName() {
+    public String getName() {
 
         return this.otterName;
     }

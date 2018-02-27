@@ -13,11 +13,11 @@ public class Dog extends Pet {
     return "Woof!";
     }
 
-    public void setDogName(String aDogName) {
+    public void setName(String aDogName) {
         this.dogName = aDogName;
     }
 
-    public String getDogName() {
+    public String getName() {
 
         return dogName;
     }

@@ -28,11 +28,10 @@ public class PetInventoryTest {
         Dog myDog = new Dog("Fighter");
         ArrayList<Pet>arrayListOfDogsTest = new ArrayList<Pet>();
         arrayListOfDogsTest.add(myDog);
-        petListTest.pets.put("Dog",arrayListOfDogsTest);
-        petListTest.addPet("Dog","Sparky");
-        Pet expected = myDog;
-        Pet actual = petListTest.pets.get("Dog").get(0);
-
+        petListTest.pets.put("dog", arrayListOfDogsTest);
+        petListTest.addPet("dog","Sparky");
+        int expected = 2;
+        int actual = petListTest.pets.get("dog").size();
         Assert.assertEquals(expected,actual);
     }
 
@@ -43,16 +42,14 @@ public class PetInventoryTest {
         ArrayList<Pet>catsTest = new ArrayList<Pet>();
         catsTest.add(myCat);
         catsTest.add(anotherCat);
-        petListTest.pets.put("Cat",catsTest);
-
-        petListTest.removePet("kitty");
-
-        int expected =1;
-        int actual = petListTest.pets.get("Cat").size();
-
+        petListTest.pets.put("cat",catsTest);
+        petListTest.removePet("Kitty");
+        int expected = 1;
+        int actual = petListTest.pets.get("cat").size();
+        System.out.println(petListTest.listPets());
         Assert.assertEquals(expected,actual);
-
     }
+
     @Test
     public  void listPetsTest(){
         Cat myCat = new Cat("Zina");
@@ -62,11 +59,12 @@ public class PetInventoryTest {
         catsTest.add(myCat);
         otterTest.add(myOtter);
 
-        petListTest.pets.put("Cat",catsTest);
-        petListTest.pets.put("Kitty",otterTest);
+        petListTest.addPet("cat", "Zina");
+        petListTest.addPet("otter", "Kitty");
 
-        String expected = "Zina==>Meow\n"+
-                "Kitty==>Muahaha";
+        String expected = "Zina==>Meow!\n"+
+                "Kitty==>Muahaha\n";
+
         String actual = petListTest.listPets();
 
         Assert.assertEquals(expected,actual);
