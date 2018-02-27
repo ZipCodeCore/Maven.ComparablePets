@@ -1,5 +1,7 @@
 package io.zipcoder;
-
+/**
+ * Edited by Frankie
+ */
 public abstract class Pet implements Animal {
     String name;
     String type;

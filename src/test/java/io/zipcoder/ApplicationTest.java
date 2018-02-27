@@ -7,6 +7,9 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
+/**
+ * MADE BY APRIL!
+ */
 public class ApplicationTest {
 
     Application application = new Application();

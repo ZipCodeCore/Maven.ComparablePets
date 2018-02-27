@@ -1,5 +1,7 @@
 package io.zipcoder;
-
+/**
+ * Edited by Frankie
+ */
 public class Dog extends Pet {
     String name;
     String type;

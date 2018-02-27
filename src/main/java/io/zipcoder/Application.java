@@ -6,6 +6,10 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
 
+/**
+ * Edited by Frankie
+ */
+
 public class Application implements Comparator<Pet> {
     Integer petCount;
     String petType;
