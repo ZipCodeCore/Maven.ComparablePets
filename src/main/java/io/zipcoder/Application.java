@@ -44,7 +44,6 @@ public class Application {
         StringBuilder petList = new StringBuilder();
         for(int i=0;i<pets.size();i++){
             petList.append(pets.get(i).getName() + " " +pets.get(i).speak()+"\n");
-            System.out.println("Adding "+ pets.get(i).getName()+ " to list");
         }
         System.out.print(petList.toString().trim());
         return petList.toString().trim();

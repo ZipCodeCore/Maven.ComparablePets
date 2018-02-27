@@ -13,10 +13,12 @@ public class ApplicationTest {
         Application app = new Application();
         Bird bird = new Bird("Joy");
         Cat cat = new Cat("Emerson");
+        Dog dog = new Dog("Ripley");
         app.pets.add(bird);
         app.pets.add(cat);
+        app.pets.add(dog);
 
-        String expected= "Joy Sqwauk\nEmerson Meow";
+        String expected= "Joy Sqwauk\nEmerson Meow\nRipley Bark";
         String actual=app.petListWithNameAndSound(app.pets);
     }
 }
