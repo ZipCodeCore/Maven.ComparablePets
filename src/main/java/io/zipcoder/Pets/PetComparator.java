@@ -1,4 +1,4 @@
-package io.zipcoder;
+package io.zipcoder.Pets;
 
 import java.util.Comparator;
 

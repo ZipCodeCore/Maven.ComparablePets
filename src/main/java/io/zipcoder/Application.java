@@ -1,5 +1,10 @@
 package io.zipcoder;
 
+import io.zipcoder.Pets.Cat;
+import io.zipcoder.Pets.Dog;
+import io.zipcoder.Pets.Pet;
+import io.zipcoder.Pets.Racoon;
+
 import java.util.*;
 
 public class Application {
