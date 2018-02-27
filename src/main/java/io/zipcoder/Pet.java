@@ -5,22 +5,25 @@ private String petName;
 
 
     //constructors
-    public Pet(){}
-    public Pet (String petName){ }
+    public Pet(){
 
-
+    }
+    public Pet (String petName){
+        this.petName = petName;
+    }
 
     //methods
     public String getPetName(){
-          return null;
+          return this.petName;
       }
 
-    public String setPetName(String petName){
-         return null;
+    public void setPetName(String petName){
+         this.petName = petName;
     }
 
     public String speak(){
-         return null;
+        String sound = "Generic Animal Sound";
+         return sound;
     }
 
 
