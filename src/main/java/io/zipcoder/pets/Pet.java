@@ -26,8 +26,8 @@ public abstract class Pet<T extends Pet<T>> implements Comparable<T> {
 
     @Override
     public int compareTo(T o) {
-        String t1 = this.getClass().getTypeName();
-        String t2 = o.getClass().getTypeName();
+        String t1 = this.getClass().getSimpleName();
+        String t2 = o.getClass().getSimpleName();
 
         int r = t1.compareTo(t2);
         return (r == 0) ? comparePetByName(o) : r;
@@ -35,6 +35,9 @@ public abstract class Pet<T extends Pet<T>> implements Comparable<T> {
 
     @Override
     public String toString() {
-        return null;
+       return String.format("%s the %s says: \"%s\"",
+               getName(),
+               this.getClass().getSimpleName(),
+               this.speak());
     }
 }
