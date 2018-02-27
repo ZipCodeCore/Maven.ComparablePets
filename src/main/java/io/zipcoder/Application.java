@@ -53,7 +53,7 @@ public class Application {
                 p = new Cat(petName);
                 this.pets.add(p);
             }
-            else if(typeOfPet.equalsIgnoreCase("Racoon")) {
+            else if(typeOfPet.equalsIgnoreCase("Racoonv")) {
                 p = new Racoon(petName);
                 this.pets.add(p);
             }

@@ -30,5 +30,5 @@ public abstract class Pet implements Comparable<Pet> {
             return this.getClass().getSimpleName().compareTo(pet1.getClass().getSimpleName());
         }
         return compareName;
-    }
+    }+
 }
