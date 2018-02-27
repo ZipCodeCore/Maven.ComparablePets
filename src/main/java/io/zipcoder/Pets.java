@@ -20,4 +20,24 @@ public abstract class Pets implements Comparable<Pets> , Comparator<Pets>{
     }
 
     public abstract String speak();
+
+    public int compareTo(Pets pet) {
+
+        int compare = this.getName().compareToIgnoreCase(pet.getName());
+
+        if(compare != 0) {
+            return compare;
+        } else {
+
+            compare = this.getClass().getSimpleName().compareToIgnoreCase(pet.getClass().getSimpleName());
+
+            return compare;
+        }
+
+    }
+    public int compare(Pets pet1, Pets pet2) {
+
+    }
 }
+
+
