@@ -5,13 +5,15 @@ import org.junit.Test;
 
 public class DogClassTest {
     @Test
-    public void getNameTest(){
-        //Given
-        Dog dogTest = new Dog();
-        String expected = "Hemi";
-        //Then
-        String actual = dogTest.getName();
-        //When
+    public void testConstructorPetName() {
+        // Given
+        String expected = "Spot";
+
+        // When
+        Pet testPet = new Pet(expected);
+
+        // Then
+        String actual = testPet.getName();
         Assert.assertEquals(expected, actual);
     }
 

@@ -39,8 +39,8 @@ public class PetFactoryTest {
         //Then
         Pet testPet = PetFactory.createPet(name, type);
         //When
-        Assert.assertEquals(testPet.getName(), "Bird");
-        Assert.assertTrue(testPet instanceof Cat);
+        Assert.assertEquals(testPet.getName(), "Budgie");
+        Assert.assertTrue(testPet instanceof Bird);
 
     }
 }

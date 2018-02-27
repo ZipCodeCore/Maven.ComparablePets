@@ -5,18 +5,21 @@ public class Pet {
     private String name;
 
     public Pet(){
-
+    }
+    public Pet(String name){
+        this.name = name;
     }
 
     public String speak(){
-        return null;
+        return "noise!";
     }
 
     public String getName() {
-        return null;
+        return name;
     }
 
     public void setName(String name) {
+        this.name = name;
 
     }
 

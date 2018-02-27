@@ -5,13 +5,15 @@ import org.junit.Test;
 
 public class BirdClassTest {
     @Test
-    public void getNameTest(){
-        //Given
-        Bird birdTest = new Bird();
+    public void testConstructorPetName() {
+        // Given
         String expected = "Budgie";
-        //When
-        String actual = birdTest.getName();
-        //Then
+
+        // When
+        Pet testPet = new Pet(expected);
+
+        // Then
+        String actual = testPet.getName();
         Assert.assertEquals(expected, actual);
     }
 

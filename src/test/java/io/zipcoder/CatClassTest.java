@@ -6,13 +6,15 @@ import org.junit.Test;
 public class CatClassTest {
 
     @Test
-    public void getNameTest(){
-        //Given
-        Cat catTest = new Cat();
-        String expected = "Mew";
-        //When
-        String actual = catTest.getName();
-        //Then
+    public void testConstructorPetName() {
+        // Given
+        String expected = "Kitty";
+
+        // When
+        Pet testPet = new Pet(expected);
+
+        // Then
+        String actual = testPet.getName();
         Assert.assertEquals(expected, actual);
     }
 

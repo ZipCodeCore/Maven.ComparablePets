@@ -7,14 +7,17 @@ import org.junit.Test;
 
 public class PetClassTest {
 
+
     @Test
-    public void getNameTest(){
-        //Given
-        Pet petTest = new Pet();
-        String expected = "Doge";
-        //When
-        String actual = petTest.getName();
-        //Then
+    public void testConstructorPetName() {
+        // Given
+        String expected = "Spot";
+
+        // When
+        Pet testPet = new Pet(expected);
+
+        // Then
+        String actual = testPet.getName();
         Assert.assertEquals(expected, actual);
     }
 
