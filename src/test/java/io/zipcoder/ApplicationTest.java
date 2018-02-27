@@ -63,10 +63,5 @@ public class ApplicationTest {
                 "Sally: Woof\n";
 
         Assert.assertEquals(expected, actual);
-
     }
-
-
-
-
 }

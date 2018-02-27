@@ -52,12 +52,9 @@ public class Application {
                 p = new Racoon(petName);
                 this.pets.add(p);
             }
+            else {
+                System.out.println("You cannot do this");
+            }
         }
-
-    public void sortPets(List<Pet> pets) {
-        Collections.sort(pets);
-    }
-
-
 
 }
