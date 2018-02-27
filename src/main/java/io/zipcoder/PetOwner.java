@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PetOwner {
+    CompareAnimal compareAnimal = new CompareAnimal();
     Scanner userInput = new Scanner(System.in);
-    ArrayList<Pet> petList = new ArrayList<Pet>();
-    Integer numberOfPets;
+    static final ArrayList<Pet> petList = new ArrayList<Pet>();
+    private Integer numberOfPets;
+
+
 
     public Integer askUserForNumberPets(){
         System.out.println("Please enter the number of pets you have");
@@ -34,23 +37,25 @@ public class PetOwner {
         }
     }
 
-
-    public void printPetList(){
+    public static String printPetList(ArrayList<Pet> petList){
       StringBuilder petListToString = new StringBuilder();
       for (Pet pet: petList){
           petListToString.append(pet.getPetName());
           petListToString.append(" the ");
-          petListToString.append(pet.getClass().getSimpleName() + "\n");
+          petListToString.append(pet.getClass().getSimpleName());
+          petListToString.append(" says ");
+          petListToString.append(pet.speak() + "\n");
 
       }
-        String petListString = petListToString.toString();
-        System.out.println(petListString);
+        String actualPetListToString = petListToString.toString();
+        System.out.println(petListToString.toString());
+        return actualPetListToString;
     }
 
     public void start(){
         this.askUserForNumberPets();
         this.addPetsToList(numberOfPets);
-        this.printPetList();
+        this.printPetList(petList);
     }
 
 }

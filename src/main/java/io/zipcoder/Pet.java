@@ -1,6 +1,6 @@
 package io.zipcoder;
 
-public class Pet {
+public class Pet implements Comparable<Pet>{
 private String petName;
 
 
@@ -26,5 +26,7 @@ private String petName;
          return sound;
     }
 
-
+    public int compareTo(Pet o) {
+        return this.getPetName().compareToIgnoreCase(o.getPetName());
+    }
 }
