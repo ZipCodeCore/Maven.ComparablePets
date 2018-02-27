@@ -56,12 +56,18 @@ public class Application {
         return this.numberOfPets;
     }
 
+    public void allPetsSpeak() {
+        for (Pets pet : allPets) {
+            System.out.println("Your " + pet.getClass().getSimpleName() + " named " + pet.getName() + " says " + pet.speak() +"!");
+        }
+    }
 
 
     public static void main(String[] args) {
 
         Application app = new Application();
         app.getPetInfo();
+        app.allPetsSpeak();
     }
 
 
