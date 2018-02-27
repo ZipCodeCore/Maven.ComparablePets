@@ -1,15 +1,44 @@
 package io.zipcoder.Pets;
 
-public interface Pet {
+public abstract class Pet{
 
-    public Integer getAge();
+    public String name;
+    public Integer age;
 
-    public void setAge(int age);
+    public Pet(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
 
-    public String getName();
+    public Pet(){
+        this.name = "";
+        this.age = Integer.MAX_VALUE;
+    }
 
-    public void setName(String newName);
+    public String getName() {
+        return name;
+    }
 
-    public String speak();
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setName(String newName) {
+        this.name = newName;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public abstract String speak();
+
+public int compareTo(Pet other) {
+        // compareTo should return < 0 if this is supposed to be
+        // less than other, > 0 if this is supposed to be greater than
+        // other and 0 if they are supposed to be equal
+        int petType = this.getClass().getSimpleName().compareTo(other.getClass().getSimpleName());
+        return petType == 0 ? this.getName().compareTo(other.getName()) : petType;
+        }
 
 }
