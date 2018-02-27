@@ -30,9 +30,7 @@ public class Questionairre {
             String name = Console.getString();
             Console.print("How old is this pet?");
             int age = Console.getInt();
-            Pet tempPet;
             petTypeSwitch(usersKindOfPets, name, age);
-            PetOwner newOwner = new PetOwner(petArrayList);
         }
     }
 

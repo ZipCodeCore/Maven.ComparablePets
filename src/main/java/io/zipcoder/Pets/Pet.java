@@ -1,8 +1,5 @@
 package io.zipcoder.Pets;
 
-import java.util.Arrays;
-import java.util.Comparator;
-
 public abstract class Pet{
 
     public String name;
