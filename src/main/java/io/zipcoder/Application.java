@@ -6,7 +6,6 @@ import io.zipcoder.pets.Dog;
 import io.zipcoder.pets.Pet;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -29,10 +28,12 @@ public class Application {
 
     public static String printListOfAllPets() {
         StringBuilder stringBuilder = new StringBuilder();
+        String prefix = "";
         for (int i = 0; i < petArrayList.size(); i++) {
+            stringBuilder.append(prefix);
             stringBuilder.append(petArrayList.get(i).getName());
             stringBuilder.append(" says " + petArrayList.get(i).speak());
-            stringBuilder.append("\n");
+            prefix = "\n";
         }
         return stringBuilder.toString();
     }
@@ -73,7 +74,7 @@ public class Application {
         Collections.sort(petList, new PetNameSorter());
         System.out.println("All pets organized by name:");
         for (Object pet : petList) {
-            System.out.println(pet + "\n");
+            System.out.println((Pet)pet + "\n");
         }
     }
 
@@ -81,7 +82,7 @@ public class Application {
         Collections.sort(petList, new PetTypeSorter());
         System.out.println("All pets organized by type:");
         for (Object pet : petList) {
-            System.out.println(pet + "\n");
+            System.out.println(pet.toString() + "\n");
         }
     }
 

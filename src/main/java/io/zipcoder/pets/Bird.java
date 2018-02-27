@@ -9,7 +9,7 @@ public class Bird extends Pet {
     }
 
     public String speak() {
-        return "Caw";
+        return "caw";
     }
 
 }
