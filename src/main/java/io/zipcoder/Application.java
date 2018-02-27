@@ -45,6 +45,8 @@ public class Application {
             typeOfPetStringTranslator(scannerInput);
         }
         System.out.println(printListOfAllPets());
+        nameSort(petArrayList);
+        typeSort(petArrayList);
     }
 
     public static void typeOfPetStringTranslator(String petNameAndTypeAsString) {
@@ -69,11 +71,19 @@ public class Application {
     public static void nameSort(ArrayList petList) {
         Pet[] fixedPetList = (Pet[]) petList.toArray();
         Arrays.sort(fixedPetList, new PetNameSorter());
+        System.out.println("All pets organized by name:");
+        for (Pet pet : fixedPetList) {
+            System.out.println(pet + "\n");
+        }
     }
 
     public static void typeSort(ArrayList petList) {
         Pet[] fixedPetList = (Pet[]) petList.toArray();
         Arrays.sort(fixedPetList, new PetTypeSorter());
+        System.out.println("All pets organized by type:");
+        for (Pet pet : fixedPetList) {
+            System.out.println(pet + "\n");
+        }
     }
 
 }
