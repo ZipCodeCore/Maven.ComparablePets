@@ -1,6 +1,9 @@
 package io.zipcoder;
 
 
+import io.zipcoder.pets.Dog;
+import io.zipcoder.pets.Kangaroo;
+import io.zipcoder.pets.Pet;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -36,7 +39,7 @@ public class ApplicationTest {
 
         //When
         String expected = "Cat";
-        String actual = appTest.getPetType(2);
+        String actual = appTest.getPetType(1);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -47,11 +50,11 @@ public class ApplicationTest {
         //Given
         appTest = new Application();
         String nameOfPet = "Bates";
-        appTest.setPetType("Bates");
+        appTest.setPetName("Bates");
 
         //When
         String expected = "Bates";
-        String actual = appTest.getPetName();
+        String actual = appTest.getPetName(0);
 
         //Then
         Assert.assertEquals(expected, actual);
@@ -65,20 +68,21 @@ public class ApplicationTest {
         petNames.add("Bates");
         petNames.add("Cheeks");
         petNames.add("Shakespear");
-        petNames.add("Rumples");
+        //petNames.add("Rumples");
 
         ArrayList<String> petTypes = new ArrayList<String>();
         petTypes.add("Dog");
         petTypes.add("Cat");
         petTypes.add("Kangaroo");
-        petTypes.add("Cat");
+        //petTypes.add("Cat");
 
-        appTest.buildPetMap(petNames, petTypes);
+        appTest.buildPetMap(petTypes, petNames);
         String expected = "Shakespear";
         String actual = appTest.getPetFromMap("Kangaroo");
 
         Assert.assertEquals(expected, actual);
 
     }
+
 
 }
