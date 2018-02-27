@@ -13,5 +13,5 @@ public class PetCompare implements Comparator<PetClass> {
         return pet1.getName().compareTo(pet2.getName());
     }
 }
-/** Implementaion of comparator very similar to comparable. Did enough research to make app function.
+/** Implementation of comparator very similar to comparable. Did enough research to make app function.
  * Need to research the difference between the 2. Still lacking some understanding here.*/

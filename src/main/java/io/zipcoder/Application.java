@@ -28,6 +28,7 @@ public class Application {
             petType = scan.nextLine();
             System.out.println("What is the name of this pet?");
             petName = scan.nextLine();
+            //compares incoming string to case and stores appropriate object for info entered by user
             switch (petType.toLowerCase()) {
                 case "dog":
                     petInfo.add(new Dog(petName));
@@ -44,7 +45,7 @@ public class Application {
 
         }
 
-        //iterate over an arrayList using an enhanced for loop. use getter to return name and method
+        //iterate over an arrayList using an enhanced for loop. use getter to return name and call method
         for (PetClass obj : petInfo) {
             System.out.printf("My pet %s says %s%n", obj.getName(), obj.speak());
         }

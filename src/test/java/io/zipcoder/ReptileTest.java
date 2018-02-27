@@ -26,5 +26,13 @@ public class ReptileTest {
 
     @Test
     public void testSetName() {
+        String expected = "Sneaky Snake";
+        Cat myReptile = new Cat(expected);
+        myReptile.setName(expected);
+        String actual = myReptile.getName();
+        Assert.assertEquals(expected, actual);
     }
 }
+
+
+

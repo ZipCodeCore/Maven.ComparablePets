@@ -9,14 +9,17 @@ public abstract class PetClass implements Comparable<PetClass> {
     String name;
 
     public PetClass(String name) {
+
         this.name = name;
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
     //The Pet class must have a speak method that each subclass overrides.
