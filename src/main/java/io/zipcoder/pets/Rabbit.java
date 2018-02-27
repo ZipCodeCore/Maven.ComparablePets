@@ -1,4 +1,4 @@
-package io.zipcoder;
+package io.zipcoder.pets;
 
 public class Rabbit extends Pet{
 }
