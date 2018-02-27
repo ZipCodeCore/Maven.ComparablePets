@@ -55,7 +55,7 @@ public class Questionairre {
     }
 
     public void petListNameSort() {
-        Collections.sort(petArrayList, new SortByName());
+        Collections.sort(petArrayList);
         for (Pet pet:petArrayList){
             System.out.println(pet.getName());
         }

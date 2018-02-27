@@ -50,7 +50,7 @@ public class QuestionairreTest {
         expected.add(doug);
         expected.add(testCat);
         ArrayList<Pet> actual = form.getPetArrayList();
-        Collections.sort(actual, new SortByName());
+        Collections.sort(actual);
         Assert.assertEquals(expected, form.getPetArrayList());
     }
 
