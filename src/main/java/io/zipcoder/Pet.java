@@ -1,36 +1,25 @@
 package io.zipcoder;
 
 public abstract class Pet implements Animal {
-    private Integer age = 0;
-    private String name;
+    private final String name;
 
-    public static void main(String[] args) {
-
-    }
-
-
-    public Pet() {
-
-    }
-
-    public Pet(String name) {
-        this.name = name;
-    }
-
-    public Pet(int age) {
-        this.age = age;
-    }
-
-    public Pet(String name, int age) {
-        this.name = name;
-        this.age = age;
+    public Pet(String petName) {
+        this.name = petName;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
-    public Integer getAge() {
-        return this.age;
+    @Override
+    public String toString() {
+        Class petClass = this.getClass();
+        String petType = petClass.getSimpleName();
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n------------------------------");
+        sb.append("\nPet type = " + petType);
+        sb.append("\nPet name = " + this.name);
+        return sb.toString();
     }
 }
