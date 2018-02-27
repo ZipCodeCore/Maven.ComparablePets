@@ -36,6 +36,14 @@ public abstract class Pets implements Comparable<Pets> , Comparator<Pets>{
 
     }
     public int compare(Pets pet1, Pets pet2) {
+        int compare = pet1.getClass().getSimpleName().compareToIgnoreCase((pet2.getClass().getSimpleName()));
+
+        if(compare != 0) {
+            return compare;
+        } else {
+            compare = pet1.getName().compareToIgnoreCase(pet2.getName());
+            return compare;
+        }
 
     }
 }

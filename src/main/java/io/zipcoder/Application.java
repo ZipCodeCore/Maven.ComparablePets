@@ -18,6 +18,7 @@ public class Application {
         Application app = new Application();
         app.numberOfPets();
         app.getPetCollection();
+        app.allPetsSpeak();
 
 
     }
@@ -60,6 +61,12 @@ public class Application {
     }
     public String getPetFromList (String key) {
         return this.petList.get(key);
+    }
+
+    public void allPetsSpeak() {
+        for (Pets pet: petCollector) {
+            System.out.println("Your " + pet.getClass().getSimpleName() + " named " + pet.getName() + " says \"" + pet.speak() + "\"");
+        }
     }
 
 }
