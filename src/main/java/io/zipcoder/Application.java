@@ -35,6 +35,8 @@ public class Application {
     }
 
     public static void printPetInfo() {
-
+        for (Pet p : pets) {
+            System.out.println(p.toString());
+        }
     }
 }
