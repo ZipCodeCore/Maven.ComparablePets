@@ -33,8 +33,4 @@ public abstract class Pet{
 
     public abstract String speak();
 
-    public int compare(Pet p1, Pet p2){
-        return p1.getClass().getSimpleName().compareTo(p2.getClass().getSimpleName());
-    }
-
 }

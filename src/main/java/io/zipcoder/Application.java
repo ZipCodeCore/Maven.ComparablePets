@@ -7,7 +7,8 @@ public class Application {
         form.numOfPetsPrompt();
         form.setPetArrayList();
         form.speakNSay();
-        form.petListSort();
+        form.petListTypeSort();
+        form.petListNameSort();
     }
 }
 

@@ -1,4 +1,13 @@
 package io.zipcoder;
 
-public class SortByName {
+import io.zipcoder.Pets.Pet;
+
+import java.util.Comparator;
+
+public class SortByName implements Comparator<Pet> {
+
+    public int compare(Pet o1, Pet o2) {
+        return o1.getName().compareTo(o2.getName());
+    }
+
 }

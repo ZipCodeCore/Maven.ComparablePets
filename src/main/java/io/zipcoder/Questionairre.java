@@ -5,7 +5,6 @@ import io.zipcoder.Pets.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 
 public class Questionairre {
 
@@ -14,6 +13,10 @@ public class Questionairre {
 
     public Questionairre(){
         petArrayList = new ArrayList<>();
+    }
+
+    public ArrayList<Pet> getPetArrayList() {
+        return petArrayList;
     }
 
     public void numOfPetsPrompt() {
@@ -34,23 +37,26 @@ public class Questionairre {
         }
     }
 
-    public void speakNSay() {
+    public String speakNSay() {
         String petList = "";
         for (Pet currentPet:petArrayList) {
             petList += ("The " + currentPet.getClass().getSimpleName() + " named " + currentPet.getName()
             + " says " + currentPet.speak() + ". ");
         }
         System.out.println(petList);
+        return petList;
     }
 
-    public void petListSort() {
-        Collections.sort(petArrayList, new Comparator<Pet>() {
-            @Override
-            public int compare(Pet o1, Pet o2) {
-                return o1.getClass().getSimpleName().compareTo(o2.getClass().getSimpleName());
-            }
-        });
+    public void petListTypeSort() {
+        Collections.sort(petArrayList, new SortByPetType());
         for (Pet pet:petArrayList) {
+            System.out.println(pet.getName());
+        }
+    }
+
+    public void petListNameSort() {
+        Collections.sort(petArrayList, new SortByName());
+        for (Pet pet:petArrayList){
             System.out.println(pet.getName());
         }
     }
