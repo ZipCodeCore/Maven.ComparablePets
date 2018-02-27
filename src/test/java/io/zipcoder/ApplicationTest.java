@@ -124,23 +124,23 @@ public class ApplicationTest {
 
         Assert.assertNotEquals(null, petList);
     }
-
-    @Test
-    public void sortList(){
-        //just filling an array list
-        String type = "Cat";
-        String name = "Sally";
-        String type2 = "Dog";
-        String name2 = "Bob";
-
-        ArrayList<Object> petList = application.fillList(type, name);
-        petList.add(application.fillList(type2, name2));
-
-        //start of real test with sorting the created ArrayList
-        ArrayList<Object> petListSorted = application.sortList(petList);
-
-        //two tests to make sure ArrayList is not null and that the sorted list isn't equal to the original list
-        Assert.assertNotEquals(null, petListSorted);
-        Assert.assertNotEquals(petList, petListSorted);
-    }
+//
+//    @Test
+//    public void sortList(){
+//        //just filling an array list
+//        String type = "Cat";
+//        String name = "Sally";
+//        String type2 = "Dog";
+//        String name2 = "Bob";
+//
+//        ArrayList<Object> petList = application.fillList(type, name);
+//        petList.add(application.fillList(type2, name2));
+//
+//        //start of real test with sorting the created ArrayList
+//        ArrayList<Object> petListSorted = application.sortList(petList);
+//
+//        //two tests to make sure ArrayList is not null and that the sorted list isn't equal to the original list
+//        Assert.assertNotEquals(null, petListSorted);
+//        Assert.assertNotEquals(petList, petListSorted);
+//    }
 }

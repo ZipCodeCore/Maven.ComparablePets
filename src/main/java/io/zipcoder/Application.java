@@ -41,11 +41,15 @@ public class Application {
     }
 
     public String getNameOfPet() {
-        return nameOfPet;
+        Scanner input = new Scanner(System.in);
+        System.out.println("What is it's name?");
+        return input.nextLine();
     }
 
     public String getTypeOfPet() {
-        return typeOfPet;
+        Scanner input = new Scanner(System.in);
+        System.out.println("What kind of pet is it?");
+        return input.nextLine();
     }
 
     public Integer howManyPetsYouGotDamn() {
@@ -54,19 +58,18 @@ public class Application {
         return amountOfPets;
     }
     public void addPetInfoToList(){
-        scanner.nextLine();
-        scanner.close();
+
     }
     public ArrayList<Object> fillList(String typeOfPet, String nameOfPet){
         petList.add(new Application(typeOfPet, nameOfPet));
         return petList;
     }
-    public ArrayList<Object> sortList(ArrayList<Object> petList) {
-        Object pets= null;
-        for (Object pets : petList) {
-            System.out.println(pets);
-        }
-        return null;
-    }
+//    public ArrayList<Object> sortList(ArrayList<Object> petList) {
+//        Object pets= null;
+//        for (Object pets : petList) {
+//            System.out.println(pets);
+//        }
+//        return null;
+//    }
 
 }
