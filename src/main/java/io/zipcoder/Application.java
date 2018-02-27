@@ -65,4 +65,11 @@ public class Application {
         return tempStringHolder;
     }
 
+    public static int sortLogic(Pet pet1, Pet pet2) {
+        PetSorter petSorter = new PetSorter();
+        petSorter.compare(pet1, pet2);
+
+        // sort by name and type set up, just need to implement that shit my dude
+    }
+
 }
