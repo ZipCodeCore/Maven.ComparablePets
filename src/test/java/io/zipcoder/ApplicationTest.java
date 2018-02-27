@@ -9,15 +9,18 @@ import org.junit.Test;
 
 public class ApplicationTest {
 @Test
-    public void petsWithNamesAndSounds() {
-    Application app = new Application();
-    Bird Bird = new Bird("Ugly Bird");
-    Cat cat = new Cat("Fitzgerald");
-    Dog dog = new Dog("Oreo");
+public void petNameAndSpeakTest() {
 
-    String expected = "Oreo says, Woof\nUgly Bird says, Squak\nFitzgerald says, Meow\n";
-    String actual = app.petInformation();
-    Assert.assertEquals(expected, actual);
+    Application app = new Application();
+    Bird bird = new Bird("Ugly Bird");
+    Cat cat = new Cat ("Fitzgerald");
+    Dog dog = new Dog("Oreo");
+    app.pets.add(bird);
+    app.pets.add(cat);
+    app.pets.add(dog);
+
+    String expected = "Ugly Bird Squak\nFitzgerald Meow\nOreo Bark";
+    String actual = app.petNameAndSpeak(app.pets);
 }
 
 }

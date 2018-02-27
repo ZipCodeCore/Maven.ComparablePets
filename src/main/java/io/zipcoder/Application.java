@@ -7,95 +7,53 @@ import java.util.Collections;
 
 public class Application {
 
-    ArrayList<Pet> pets = new ArrayList<Pet>();
-
-    //split into own method
+    private int numberOfPets;
+    protected ArrayList<Pet> pets = new ArrayList<Pet>();
     Scanner input = new Scanner(System.in);
-public String petInformation() {
-    System.out.println("How many pets do you own?");
-    int numberOfPets = input.nextInt();
-    input.nextLine();
 
-    for (int i = 1; i <= numberOfPets; i++) {
-        System.out.println("What type of pet is pet number " + i + "?");
-        String typeOfPet = input.nextLine();
-
-        if ("dog".equalsIgnoreCase(typeOfPet)) {
-
-            System.out.println("What is the name of your dog?");
-            String dogName = input.nextLine();
-
-            pets.add(new Dog(dogName));
-        } else if ("cat".equalsIgnoreCase(typeOfPet)) {
-
-            System.out.println("What is the name of your cat?");
-            String catName = input.nextLine();
-
-            pets.add(new Cat(catName));
-        } else if ("bird".equalsIgnoreCase(typeOfPet)) {
-
-            System.out.println("What is the name of your bird?");
-            String birdName = input.nextLine();
-
-            pets.add(new Bird(birdName));
-        } else {
-            System.out.println("Sorry, I pretty much only care about your story if you own a dog ," +
-                    "cat, or bird. Not a " + input);
-        }
-    }
-StringBuilder sb = new StringBuilder();
-    for (Pet pet : pets) {
-        System.out.println(pet.getName() + " says, " + pet.speak());
-        sb.append(pet.getName() + " says, " + pet.speak());
-    }
-    return sb.toString();
-}
-
-
-    public static void main(String[] args) {
-        ArrayList<Pet> pets = new ArrayList<Pet>();
-
-        Scanner input = new Scanner(System.in);
-
+    public int storePetInformation(){
         System.out.println("How many pets do you own?");
-        int numberOfPets = input.nextInt();
-        input.nextLine();
-
-        for(int i = 1; i <= numberOfPets; i++) {
-            System.out.println("What type of pet is pet number " + i + "?");
-            String typeOfPet = input.nextLine();
-
-            if("dog".equalsIgnoreCase(typeOfPet)) {
-
-                System.out.println("What is the name of your dog?");
-                String dogName = input.nextLine();
-
-                pets.add(new Dog(dogName));
-            }
-            else if ("cat".equalsIgnoreCase(typeOfPet)) {
-
-                System.out.println("What is the name of your cat?");
-                String catName = input.nextLine();
-
-                pets.add(new Cat(catName));
-            }
-            else if("bird".equalsIgnoreCase(typeOfPet)) {
-
-                System.out.println("What is the name of your bird?");
-                String birdName = input.nextLine();
-
-                pets.add(new Bird(birdName));
-            }
-            else {
-                System.out.println("Sorry, I pretty much only care about your story if you own a dog ," +
-                        "cat, or bird. Not a " + input);
-            }
+        numberOfPets = input.nextInt();
+        for(int i = 0; i<numberOfPets; i++){
+            pets.add(userInputEachPet());
         }
+        return numberOfPets;
+    }
 
-        for(Pet pet : pets) {
-            System.out.println(pet.getName() + " says, " + pet.speak());
+    public Pet userInputEachPet(){
+        System.out.println("Type of pet?");
+        String typeOfPet = input.next();
+
+        System.out.println("What is the pet's name?");
+        String nameOfPet = input.next();
+        Pet pet = new Pet(nameOfPet);
+        if(typeOfPet.equalsIgnoreCase("Cat")){
+            pet = new Cat(nameOfPet);
         }
+        else if (typeOfPet.equalsIgnoreCase("Dog")){
+            pet = new Dog(nameOfPet);
+        }
+        else if(typeOfPet.equalsIgnoreCase("Bird")){
+            pet = new Bird(nameOfPet);
+        }
+        return pet;
+    }
 
+    public String petNameAndSpeak(ArrayList<Pet> pets) {
+        StringBuilder petList = new StringBuilder();
+        for(int i = 0; i < pets.size(); i++) {
+            petList.append(pets.get(i).getName() + " " + pets.get(i).speak()+"\n");
+        }
+        System.out.println(petList.toString().trim());
+        return petList.toString().trim();
+    }
+    public void addPet(Pet pet) {
+        pets.add(pet);
+    }
+    public static void main(String [] args){
+        Application application = new Application();
+        application.storePetInformation();
+        application.petNameAndSpeak(application.pets);
     }
 
 }
