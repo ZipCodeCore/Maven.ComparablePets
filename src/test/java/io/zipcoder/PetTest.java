@@ -10,15 +10,15 @@ public class PetTest {
 
     @Before
     public void setUp() {
-        pet = new Pet();
+        pet = new Dog();
     }
 
     @Test
-    public void getPetNameTest(){
+    public void getPetNameTest() {
         String petName = "Doug";
         pet.setPetName(petName);
         boolean nameHasBeenSet = pet.getPetName().contains(petName);
         assertTrue(nameHasBeenSet);
-        }
     }
+}
 
