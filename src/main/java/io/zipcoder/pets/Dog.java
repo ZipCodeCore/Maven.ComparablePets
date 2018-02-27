@@ -5,4 +5,8 @@ public class Dog extends Pet {
         super(name, age);
     }
 
+    public int compareTo(Pet otherPet) {
+        return this.name.compareTo(otherPet.getName());
+
+    }
 }

@@ -1,11 +1,11 @@
 package io.zipcoder.pets;
 
-public abstract class Pet {
-    private String name;
-    private Integer age;
+public abstract class Pet implements Comparable<Pet> {
+    protected String name;
+    protected Integer age;
 
     public Pet(String name, int age){
-        this.name = null;
+        this.name = name;
         this.age = null;
     }
 
@@ -18,7 +18,7 @@ public abstract class Pet {
     }
 
     public String getName(){
-        return null;
+        return name;
     }
 
     public void setName(String newName){
