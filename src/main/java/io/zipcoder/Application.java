@@ -39,20 +39,30 @@ public class Application {
         System.out.println("Welcome to Pet Storage Inc.\nHow many pets do you have?");
         int amountOfPets = Integer.parseInt(input.nextLine());
         System.out.println("Enter your pet's name and the type of pet separated by a space:");
-        String petNameAndTypeAsString = input.nextLine();
         for (int i = 0; i < amountOfPets; i++) {
-            String[] petNameAndTypeAsArray = petNameAndTypeAsString.split(" ");
-            String nameOfPet = petNameAndTypeAsArray[0];
-            String typeOfPet = petNameAndTypeAsArray[1].toLowerCase();
-            if (typeOfPet.equals("dog")) {
-                addPetToArrayList(new Dog(nameOfPet));
-            } else if (typeOfPet.equals("cat")) {
-                addPetToArrayList(new Cat(nameOfPet));
-            } else if (typeOfPet.equals("bird")) {
-                addPetToArrayList(new Bird(nameOfPet));
-            }
+            String scannerInput = scannerReader();
+            typeOfPetStringTranslator(scannerInput);
         }
         System.out.println(printListOfAllPets());
+    }
+
+    public static void typeOfPetStringTranslator(String petNameAndTypeAsString) {
+        String[] petNameAndTypeAsArray = petNameAndTypeAsString.split(" ");
+        String nameOfPet = petNameAndTypeAsArray[0];
+        String typeOfPet = petNameAndTypeAsArray[1].toLowerCase();
+        if (typeOfPet.equals("dog")) {
+            addPetToArrayList(new Dog(nameOfPet));
+        } else if (typeOfPet.equals("cat")) {
+            addPetToArrayList(new Cat(nameOfPet));
+        } else if (typeOfPet.equals("bird")) {
+            addPetToArrayList(new Bird(nameOfPet));
+        }
+    }
+
+    public static String scannerReader() {
+        String tempStringHolder = "";
+        tempStringHolder += input.nextLine();
+        return tempStringHolder;
     }
 
 }
