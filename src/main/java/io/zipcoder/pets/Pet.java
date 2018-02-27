@@ -1,6 +1,6 @@
 package io.zipcoder.pets;
 
-abstract public class Pet {
+abstract public class Pet implements PetBehavior,Comparable<Pet>{
 
     private String name;
 
@@ -14,6 +14,15 @@ abstract public class Pet {
 
     public void setName(String aPetName) {
 
+    }
+    public int compareTo(Pet anotherPet){
+        if (getName().compareTo(anotherPet.getName()) > 0) {
+            return 1;
+        } else if (getName().compareTo(anotherPet.getName()) < 0) {
+            return -1;
+        } else {
+            return getClass().getSimpleName().compareTo(anotherPet.getClass().getSimpleName());
+        }
     }
 
 }

@@ -7,13 +7,18 @@ import java.util.HashMap;
 
 public class PetInventory {
 
-    HashMap<String, Pet> pets;
+    HashMap<String, ArrayList<Pet>> pets;
+
+    public PetInventory(){
+        this.pets = new HashMap<String, ArrayList<Pet>>();
+
+    }
 
     public void addPet(String petType, String petName) {
 
     }
 
-    public void removePet(Pet aPet) {
+    public void removePet(String petName) {
 
     }
 
@@ -25,7 +30,7 @@ public class PetInventory {
         return null;
     }
 
-    public ArrayList<String> lookUpByType(String petType) {
+    public ArrayList<String> listOfPetsByName() {
         return null;
     }
 
