@@ -16,7 +16,7 @@ public class DogTest {
      */
 
     @Before
-    public void instantiatedog() {
+    public void instantiateDog() {
         String name = "April";
         dog = new Dog(name);
     }

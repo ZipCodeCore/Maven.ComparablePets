@@ -4,37 +4,34 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * created by Frankie on 02/26/18
- */
-public class TurtleTest {
-    Turtle turtle;
+public class ElectricMouseTest {
+    ElectricMouse electricMouse;
     /**
-     * the turtle class should extend the Pet class
+     * the electricMouse class should extend the Pet class
      * Should feature a null constructor that defaults name = "";
      * and feature a name constructor that sets this.name = name;
      */
 
     @Before
-    public void instantiateTurtle() {
-        String name = "Crush";
-        turtle = new Turtle(name);
+    public void instantiateElectricMouse() {
+        String name = "Pikachu";
+        electricMouse = new ElectricMouse(name);
     }
 
     @Test
     public void speakTest() {
-        String response = turtle.speak();
-        String expected = "WEEESNAW!";
+        String response = electricMouse.speak();
+        String expected = "PIKACHUUUUUUUU!";
         Assert.assertEquals(expected, response);
         /* looks something like:
         public String speak() {
-        Animal turtle = new Animal() {
+        Animal electricMouse = new Animal() {
             @Override
             public String speak() {
                 return "Meow";
             }
         };
-        return turtle.speak();
+        return electricMouse.speak();
     }
          */
     }
@@ -42,15 +39,15 @@ public class TurtleTest {
 
     @Test
     public void getNameTest1(){
-        String actual = turtle.getName();
-        String expected = "Crush";
+        String actual = electricMouse.getName();
+        String expected = "Pikachu";
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void getNameTest2(){
-        turtle = new Turtle();
-        String actual = turtle.getName();
+        electricMouse = new ElectricMouse();
+        String actual = electricMouse.getName();
         String expected = "";
         Assert.assertEquals(expected, actual);
     }
