@@ -1,6 +1,6 @@
 package io.zipcoder;
 
-public class Cat extends Pet {
+public class Cat extends Pet implements Comparable<Pet> {
 
     public Cat(){}
     public Cat (String name){
@@ -11,4 +11,7 @@ public class Cat extends Pet {
         return "Meow";
     }
 
+    public int compareTo(Pet o) {
+        return 0;
+    }
 }

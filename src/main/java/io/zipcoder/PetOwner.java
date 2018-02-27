@@ -1,7 +1,6 @@
 package io.zipcoder;
 
 import java.util.ArrayList;
-import java.util.Formatter;
 import java.util.Scanner;
 
 public class PetOwner {
@@ -41,6 +40,8 @@ public class PetOwner {
             sb.append(myPetList.get(i).getName());
             sb.append(" is a ");
             sb.append(myPetList.get(i).getClass().getSimpleName()+"\n");
+            sb.append("this pet says: ");
+            sb.append(myPetList.get(i).speak() +"\n");
         }
         return sb.toString();
     }
