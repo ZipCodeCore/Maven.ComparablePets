@@ -6,13 +6,15 @@ public abstract class Pet {
     private Cat cat;
     private Turtle turtle;
     private ElectricMouse electricMouse;
+    public String typeOfPet;
 
     public Pet(){
         this.name = "";
     }
 
-    public Pet(String name) {
+    public Pet(String name, String typeOfPet) {
         this.name = name;
+        this.typeOfPet = typeOfPet;
     }
 
     public String speak(){
@@ -22,4 +24,5 @@ public abstract class Pet {
     public String getName() {
         return name;
     }
+
 }

@@ -1,15 +1,14 @@
 package io.zipcoder;
 
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 //April
 /**
  * Tests made by Frankie Rodriguez on 02/26/18
  */
 
-public class Application {
+public class Application  {
     private String nameOfPet;
     private String typeOfPet;
     private Integer amountOfPets;
@@ -19,12 +18,13 @@ public class Application {
 
     public Application() {
     }
-    public Application(String typeOfPet, String nameOfPet){
+
+    public Application(String typeOfPet, String nameOfPet) {
         this.typeOfPet = typeOfPet;
         this.nameOfPet = nameOfPet;
     }
 
-    public void welcomeUser(){
+    public void welcomeUser() {
         System.out.println("******************** WELCOME PET OWNER **********************\n" +
                 "We will be asking you a couple of questions about your pets.\n" +
                 "No need to worry. We won't be doing anything sketchy with\n" +
@@ -50,16 +50,22 @@ public class Application {
 
     }
 
-    public ArrayList<Object> fillList(String typeOfPet, String nameOfPet){
+    public ArrayList<Object> fillList(String typeOfPet, String nameOfPet) {
         petList.add(new Application(typeOfPet, nameOfPet));
         return petList;
     }
-//    public ArrayList<Object> sortList(ArrayList<Object> petList) {
-//        Object pets= null;
-//        for (Object pets : petList) {
-//            System.out.println(pets);
-//        }
-//        return null;
-//    }
+
+
+    public ArrayList<Object> sortList(ArrayList<Object> petList) {
+        Collections.sort(this.petList, new ComparePets());
+        Iterator itr = this.petList.iterator();
+        while(itr.hasNext()){
+            Pet pet = (Pet)itr.next();
+            System.out.println(pet.getName());
+        }
+        return petList;
+    }
 
 }
+
+
