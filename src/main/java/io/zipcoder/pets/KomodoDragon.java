@@ -8,17 +8,18 @@ package io.zipcoder.pets;
  */
 public class KomodoDragon extends Pet<KomodoDragon> {
     private static final String fDEFAULT_NAME = "Phillip";
+    private static final String fSOUND = "hiss";
 
-    KomodoDragon() {
+    public KomodoDragon() {
         this(fDEFAULT_NAME);
     }
 
-    KomodoDragon(String name) {
+    public KomodoDragon(String name) {
         super(name);
     }
 
     @Override
     public String speak() {
-        return null;
+        return fSOUND;
     }
 }

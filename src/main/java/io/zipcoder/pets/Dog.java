@@ -8,17 +8,18 @@ package io.zipcoder.pets;
  */
 public class Dog extends Pet<Dog> {
     private static final String fDEFAULT_NAME = "Clarence";
+    private static final String fSOUND = "woof";
 
-    Dog() {
+    public Dog() {
         this(fDEFAULT_NAME);
     }
 
-    Dog(String name) {
+    public Dog(String name) {
         super(name);
     }
 
     @Override
     public String speak() {
-        return null;
+        return fSOUND;
     }
 }

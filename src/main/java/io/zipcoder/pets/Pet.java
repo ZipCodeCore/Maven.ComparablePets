@@ -7,23 +7,30 @@ package io.zipcoder.pets;
  * date: 2/26/18
  */
 
-public abstract class Pet<T> implements Comparable<T> {
-    private static final String fDEFAULT_PET_NAME = "Gerald";
+public abstract class Pet<T extends Pet<T>> implements Comparable<T> {
     private String name;
-
-    Pet() {
-        this(fDEFAULT_PET_NAME);
-    }
 
     Pet(String name) {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     abstract String speak();
+
+    private int comparePetByName(T o) {
+        return name.compareTo(o.getName());
+    }
 
     @Override
     public int compareTo(T o) {
-        return -1;
+        String t1 = this.getClass().getTypeName();
+        String t2 = o.getClass().getTypeName();
+
+        int r = t1.compareTo(t2);
+        return (r == 0) ? comparePetByName(o) : r;
     }
 
     @Override
