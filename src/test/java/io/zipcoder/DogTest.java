@@ -12,6 +12,7 @@ public class DogTest {
         String expected = "woof";
     }
 
+    @Test
     public void getNamesOfDog() {
         Dog dog = new Dog("Chance");
         String expected = "Chance";
@@ -28,6 +29,7 @@ public class DogTest {
         String actual = dog.getName();
     }
 
+    @Test
     public void dogSpeakTest() {
         Dog dog = new Dog("Chance");
         String expected = "I'm such a wimp! I'm running from a cat!";

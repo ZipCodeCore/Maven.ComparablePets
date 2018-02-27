@@ -1,20 +1,29 @@
 package io.zipcoder;
 
-public class Bird {
+public class Bird extends Pets {
 
     public Bird()
     {
 
     }
 
-    public String speak() {
-        return null;
+    public Bird(String name)
+    {
+        super(name);
     }
 
-    public void setName(String name) {
+    public String speak()
+    {
+        return "chirp";
     }
 
-    public String getName() {
-        return null;
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public String getName()
+    {
+        return this.name;
     }
 }

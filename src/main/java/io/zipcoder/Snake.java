@@ -2,8 +2,20 @@ package io.zipcoder;
 
 public class Snake extends Pets {
 
+
+
     public Snake(String name) {
-        super();
+        super(name);
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
     }
 
     public String speak() {

@@ -1,18 +1,22 @@
 package io.zipcoder;
 
-public class Cat {
+public class Cat extends Pets {
+
     public Cat(){}
 
     public Cat(String name) {
-        super();
+        super(name);
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
+        this.name = name;
 
     }
 
-    public String getName() {
-        return null;
+    public String getName()
+    {
+        return this.name;
     }
 
     public String speak() {

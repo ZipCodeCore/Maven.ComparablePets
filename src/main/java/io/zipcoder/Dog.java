@@ -1,12 +1,14 @@
 package io.zipcoder;
 
-public class Dog {
+public class Dog extends Pets{
 
-    private String name;
-    public Dog(){}
+
+    public Dog() {
+
+    }
 
     public Dog(String name) {
-        super();
+        super(name);
     }
 
     public void setName(String name) {
