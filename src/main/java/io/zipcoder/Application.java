@@ -74,7 +74,7 @@ public class Application {
         Collections.sort(petList, new PetNameSorter());
         System.out.println("All pets organized by name:");
         for (Object pet : petList) {
-            System.out.println((Pet)pet + "\n");
+            System.out.println(pet + "\n");
         }
     }
 
@@ -82,7 +82,7 @@ public class Application {
         Collections.sort(petList, new PetTypeSorter());
         System.out.println("All pets organized by type:");
         for (Object pet : petList) {
-            System.out.println(pet.toString() + "\n");
+            System.out.println(pet + "\n");
         }
     }
 
