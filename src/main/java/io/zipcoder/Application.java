@@ -7,6 +7,7 @@ import io.zipcoder.pets.Pet;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Application {
@@ -69,19 +70,17 @@ public class Application {
     }
 
     public static void nameSort(ArrayList petList) {
-        Pet[] fixedPetList = (Pet[]) petList.toArray();
-        Arrays.sort(fixedPetList, new PetNameSorter());
+        Collections.sort(petList, new PetNameSorter());
         System.out.println("All pets organized by name:");
-        for (Pet pet : fixedPetList) {
+        for (Object pet : petList) {
             System.out.println(pet + "\n");
         }
     }
 
     public static void typeSort(ArrayList petList) {
-        Pet[] fixedPetList = (Pet[]) petList.toArray();
-        Arrays.sort(fixedPetList, new PetTypeSorter());
+        Collections.sort(petList, new PetTypeSorter());
         System.out.println("All pets organized by type:");
-        for (Pet pet : fixedPetList) {
+        for (Object pet : petList) {
             System.out.println(pet + "\n");
         }
     }
