@@ -1,6 +1,6 @@
 package io.zipcoder;
 
-public abstract class Pet {
+public class Pet {
     private String name;
     private Dog dog;
     private Cat cat;
@@ -10,6 +10,7 @@ public abstract class Pet {
 
     public Pet(){
         this.name = "";
+        this.typeOfPet = "";
     }
 
     public Pet(String name, String typeOfPet) {

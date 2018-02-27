@@ -8,13 +8,13 @@ import java.util.*;
  * Tests made by Frankie Rodriguez on 02/26/18
  */
 
-public class Application  {
+public class Application {
     private String nameOfPet;
     private String typeOfPet;
     private Integer amountOfPets;
 
 
-    ArrayList<Object> petList = new ArrayList<Object>();
+    ArrayList<Pet> petList = new ArrayList<>();
 
     public Application() {
     }
@@ -50,21 +50,19 @@ public class Application  {
 
     }
 
-    public ArrayList<Object> fillList(String typeOfPet, String nameOfPet) {
-        petList.add(new Application(typeOfPet, nameOfPet));
+    public ArrayList<Pet> fillList(String nameOfPet, String typeOfPet) {
+        petList.add(new Pet());
         return petList;
     }
 
 
-    public ArrayList<Object> sortList(ArrayList<Object> petList) {
-        Collections.sort(this.petList, new ComparePets());
-        Iterator itr = this.petList.iterator();
-        while(itr.hasNext()){
-            Pet pet = (Pet)itr.next();
-            System.out.println(pet.getName());
-        }
+    public static ArrayList<Pet> sortList(ArrayList<Pet> petList) {
+        Collections.sort(petList, (Pet petOne, Pet petTwo)-> petOne.getName().compareTo(petTwo.getName()));
         return petList;
+
     }
+
+
 
 }
 
