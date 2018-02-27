@@ -61,7 +61,7 @@ public class PetInventoryTest {
         testInventory.pets.put(petType1, otterList);
         testInventory.pets.put(petType2, dogList);
         String actual = testInventory.listPets();
-        String expected = "Oliver says Muahaha\nDasher says Woof!";
+        String expected = "Dasher says Woof!\nOliver says Muahaha\n";
         Assert.assertEquals(expected, actual);
     }
 
@@ -88,8 +88,9 @@ public class PetInventoryTest {
         testList.add(marky);
         testInventory.pets.put("dog", testList);
         ArrayList<String> expected = new ArrayList<String>();
-        expected.add("Marky");
         expected.add("Ricky");
+        expected.add("Marky");
+
         ArrayList<String> actual = testInventory.listOfPetsByName();
         Assert.assertEquals(expected, actual);
     }
@@ -115,7 +116,7 @@ public class PetInventoryTest {
         expected.add("Marky");
         expected.add("Ricky");
         expected.add("Oliver");
-        ArrayList<String> actual = testInventory.listOfPetsByType();
+        ArrayList<String> actual = testInventory.listOfPetsByTypeSorted();
         Assert.assertEquals(expected, actual);
     }
 

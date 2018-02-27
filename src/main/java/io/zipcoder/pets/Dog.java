@@ -8,7 +8,7 @@ public class Dog extends Pet {
     }
 
     public String speak(){
-        return "Woof";
+        return "Woof!";
     }
 
     public String getName() {
