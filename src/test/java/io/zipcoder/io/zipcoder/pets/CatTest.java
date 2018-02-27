@@ -2,32 +2,34 @@ package io.zipcoder.io.zipcoder.pets;
 
 import io.zipcoder.Pets.Cat;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class CatTest {
 
-    Cat testCat = new Cat("Bubbles", 2);
+    Cat testCat;
 
-    String name;
-    int age;
+    @Before
+    public void setup(){
+        testCat = new Cat("Bubbles", 2);
+    }
+
 
     @Test
     public void setCatNameAndAgeTest (){
-//        name = newName;
-//        age = newage;
-        String expectedName = "wrong";
+        String expectedName = "Bubbles";
         String actualName = testCat.getName();
-        int expectedAge = 200;
+        int expectedAge = 2;
         int actualAge = testCat.getAge();
 
-        Assert.assertEquals(expectedName, expectedName);
+        Assert.assertEquals(expectedName, actualName);
         Assert.assertEquals(expectedAge, actualAge);
     }
 
     @Test
     public void speakTest(){
         Cat testCat = new Cat("Bubbles", 2);
-        String expected = "wrong";
+        String expected = "Meow";
         String actual = testCat.speak();
         Assert.assertEquals(expected, actual);
     }

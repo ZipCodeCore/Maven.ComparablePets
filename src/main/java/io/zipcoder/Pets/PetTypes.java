@@ -1,3 +1,7 @@
 package io.zipcoder.Pets;
 
-public enum PetTypes { Cat, Dog, Capybara }
+public enum PetTypes {
+    Cat,
+    Dog,
+    Capybara
+}
