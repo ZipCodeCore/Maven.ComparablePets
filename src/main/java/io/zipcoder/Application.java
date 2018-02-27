@@ -10,14 +10,11 @@ public class Application {
     String petType;
     String petName;
 
-
     public static void main(String[] args) {
         Application app = new Application();
         app.setNumberOfPets();
         app.buildPetInventory();
-
     }
-
 
     public void setNumberOfPets() {
 

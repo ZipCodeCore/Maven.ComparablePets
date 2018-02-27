@@ -8,9 +8,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class PetInventoryTest {
 
@@ -18,9 +17,7 @@ public class PetInventoryTest {
 
     @Before
     public void setup() {
-
         petListTest = new PetInventory();
-
     }
 
     @Test
@@ -82,35 +79,58 @@ public class PetInventoryTest {
     }
 
     @Test
-    public void listOfPetsByNameTest() {
-        Dog myDog = new Dog("Fighter");
-        ArrayList<Pet> arrayListOfDogsTest = new ArrayList<Pet>();
-        arrayListOfDogsTest.add(myDog);
-        Cat myCat = new Cat("Zina");
-        Otter myOtter = new Otter("Otty");
-        ArrayList<Pet> catsTest = new ArrayList<Pet>();
-        ArrayList<Pet> otterTest = new ArrayList<Pet>();
-        catsTest.add(myCat);
-        otterTest.add(myOtter);
-
-        petListTest.pets.put("Cat", catsTest);
-        petListTest.pets.put("Otty", otterTest);
-        petListTest.pets.put("Dog", arrayListOfDogsTest);
-
-        ArrayList<String> expected = new ArrayList<String>();
-        expected.add("Fighter");
-        expected.add("Otty");
-        expected.add("Zina");
-
-        ArrayList<String> actual = petListTest.listOfPetsByName();
-
+    public void getPetsByTypeTest() {
+        petListTest.addPet("cat", "Zina");
+        petListTest.addPet("otter", "Otty");
+        petListTest.addPet("cat", "Tissue");
+        String expected = "Tissue";
+        String actual = petListTest.getPetsByType("cat").get(1).getName();
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void listOfPetsByTypeTest() {
+    public void getAllPetsTest() {
+        petListTest.addPet("cat", "Zina");
+        petListTest.addPet("otter", "Felix");
+        petListTest.addPet("dog", "Arnold");
+        petListTest.addPet("otter", "Clubber");
+        petListTest.addPet("cat", "Felix");
+        String expected = "Clubber";
+        String actual = petListTest.getAllPets().get(4).getName();
+        Assert.assertEquals(expected, actual);
+    }
 
+    @Test
+    public void sortPetsByNameTest() {
+        petListTest.addPet("cat", "Zina");
+        petListTest.addPet("otter", "Felix");
+        petListTest.addPet("dog", "Arnold");
+        petListTest.addPet("otter", "Clubber");
+        petListTest.addPet("cat", "Felix");
+        // from: Zina, Felix(cat), Arnold, Felix (otter), Clubber
+        // to: Arnold, Clubber, Felix (cat), Felix (otter), Zina
 
+        petListTest.sortPetsByName();
 
+        String expected = "Meow!";
+        String actual = petListTest.getAllPets().get(2).speak();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void sortPetsByTypeTest() {
+        petListTest.addPet("cat", "Zina");
+        petListTest.addPet("otter", "Felix");
+        petListTest.addPet("dog", "Arnold");
+        petListTest.addPet("otter", "Clubber");
+        petListTest.addPet("cat", "Felix");
+        // from: Zina, Felix (cat), Arnold, Felix (otter), Clubber
+        // to: Felix (cat), Zina, Arnold, Clubber, Felix (otter)
+
+        petListTest.sortPetsByType();
+
+        String expected = "Clubber";
+        String actual = petListTest.getAllPets().get(3).getName();
+        Assert.assertEquals(expected, actual);
     }
 }

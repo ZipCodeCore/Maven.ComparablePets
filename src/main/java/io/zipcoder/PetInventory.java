@@ -6,10 +6,7 @@ import io.zipcoder.pets.Otter;
 import io.zipcoder.pets.Pet;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class PetInventory {
 
@@ -17,7 +14,6 @@ public class PetInventory {
 
     public PetInventory() {
         this.pets = new HashMap<String, ArrayList<Pet>>();
-
     }
 
 
@@ -102,13 +98,37 @@ public class PetInventory {
 
     }
 
-    public ArrayList<String> listOfPetsByName() {
-        return null;
-    }
-
     public ArrayList<Pet> getPetsByType(String petType) {
         return pets.get(petType);
     }
+
+    public ArrayList<Pet> getAllPets() {
+
+        ArrayList<Pet> allPets = new ArrayList<Pet>();
+
+        for (int i = 0; i < getPetsByType("cat").size(); i++) {
+            allPets.add(getPetsByType("cat").get(i));
+        }
+        for (int i = 0; i < getPetsByType("dog").size(); i++) {
+            allPets.add(getPetsByType("dog").get(i));
+        }
+        for (int i = 0; i < getPetsByType("otter").size(); i++) {
+            allPets.add(getPetsByType("otter").get(i));
+        }
+
+        return allPets;
+    }
+
+    public void sortPetsByName() {
+        Collections.sort(getAllPets());
+    }
+
+    public void sortPetsByType() {
+        Collections.sort(getAllPets());
+    }
+
+
+
 
 
 }
