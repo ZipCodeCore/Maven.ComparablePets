@@ -1,17 +1,10 @@
 package io.zipcoder;
 
-import com.sun.javafx.tools.packager.JarSignature;
 
-import javax.xml.crypto.Data;
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static java.lang.System.in;
-import static java.lang.System.setIn;
-
-
+//April
 /**
  * Tests made by Frankie Rodriguez on 02/26/18
  */
@@ -20,8 +13,6 @@ public class Application {
     private String nameOfPet;
     private String typeOfPet;
     private Integer amountOfPets;
-
-    Scanner scanner = new Scanner(in);
 
 
     ArrayList<Object> petList = new ArrayList<Object>();
@@ -53,13 +44,12 @@ public class Application {
     }
 
     public Integer howManyPetsYouGotDamn() {
+        Scanner input = new Scanner(System.in);
         System.out.println("How many pets do you have?\n\nEnter the amount of pets: ");
-//        int amountOfPets = scanner.nextInt();
-        return amountOfPets;
-    }
-    public void addPetInfoToList(){
+        return input.nextInt();
 
     }
+
     public ArrayList<Object> fillList(String typeOfPet, String nameOfPet){
         petList.add(new Application(typeOfPet, nameOfPet));
         return petList;
