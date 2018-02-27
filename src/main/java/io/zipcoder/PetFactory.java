@@ -1,18 +1,14 @@
 package io.zipcoder;
 
 public class PetFactory {
-    public static Pet petCreator(String type, String name) {
 
-        if("Dog".equalsIgnoreCase(type)) {
-            return new Dog(name);
-
-        } else if ("Cat".equalsIgnoreCase(type)){
+    public static Pets petCreator(String type, String name) {
+        if(type.equals("Cat"))
             return new Cat(name);
-
-        } else if ("Snake".equalsIgnoreCase(type)) {
+        else if (type.equals("Snake"))
             return new Snake(name);
-
-        } return null;
-
+        else if (type.equals("Dog"))
+            return new Dog(name);
+        return null;
     }
 }
