@@ -27,7 +27,7 @@ Create a program that asks the user how many pets they have. Once you know how m
 Create a Pet class, and a subclass for each type of pet that you want your program to support. Your classes should follow the following requirements:
 
 - You must support at least three types of pets.
-- Dog must be one of the types you support.
+- io.zipcoder.pets.Dog must be one of the types you support.
 - Cat must be one of the types you support.
 - The Pet class must have a `speak` method that each subclass overrides.
 - The Pet class must have a `name` field with setters and getters.
