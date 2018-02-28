@@ -1,94 +1,98 @@
 package io.zipcoder;
 
-
-import com.sun.xml.internal.bind.v2.TODO;
-
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.Collections;
 import java.util.Scanner;
 
+
 public class Application {
-    List<Pet> listOfPets = new ArrayList<Pet>();
-    List<String> petNames = new ArrayList<String>();
-    List<String> petTypes = new ArrayList<String>();
-
-    HashMap<String, String> petLists = new HashMap<String, String>();
-
-    Integer numOfPets;
+    private ArrayList<Pet> pets = new ArrayList<Pet>();
+    private Scanner scanner = new Scanner(System.in);
 
 
-    public Application(){
-        numOfPets = 0;
+    public static void main(String[] args) {
+        Application application = new Application();
+        application.start();
+
     }
 
 
+    public void start() {
+        System.out.println("How many pets do you have?");
+        String numberOfPetsString = scanner.nextLine();
+        int numberOfPets = Integer.parseInt(numberOfPetsString);
 
-    public void setNumOfPets(Integer numOfPets){
-        this.numOfPets = numOfPets;
-    }
+        for (int i = 0; i < numberOfPets; i++) {
+            System.out.println("What is the type of pet?");
+            String typeOfPet = scanner.nextLine();
 
-    public Integer getNumOfPets() {
+            System.out.println("What is the name of the pet?");
+            String petName = scanner.nextLine();
 
-        Scanner sc = new Scanner(System.in);
-        System.out.print("How many pets do you have?");
-        Integer numOfPets = sc.nextInt();
-        sc.nextLine();
-        return numOfPets;
-    }
-
-
-
-
-    public void setPetTypes(List<String> petTypes){
-        this.petTypes = petTypes;
-    }
-
-    public String getPetType() {
-        String typeOfPet = null;
-        for (Integer i = 0; i < numOfPets; i++) {
-            System.out.println("For each pet, what kind of pet is it?");
-            Scanner sc1 = new Scanner(System.in);
-            typeOfPet = sc1.nextLine();
-            petTypes.add(typeOfPet);
-
+            Pet pet = createPet(typeOfPet, petName);
+            this.add(pet);
 
         }
-        return petTypes.toString();
+        printPets();
+
     }
 
 
+    public void printPets() {
+        for (Pet pet : pets) {
+            String petName = pet.getName();
+            String petType = pet.getClass().getSimpleName();
+            System.out.println("Pet name = " + petName);
+            System.out.println("Pet type = " + petType);
 
-
-    public void setPetNames(List<String> petNames){
-        this.petNames = petNames;
-    }
-
-    public String getPetName() {
-        String nameOfPet = null;
-        for (Integer i = 0; i < numOfPets; i++) {
-            Scanner sc2 = new Scanner(System.in);
-            System.out.println("What's the name of your pet?");
-            nameOfPet = sc2.nextLine();
-            petNames.add(nameOfPet);
         }
-        return petNames.toString();
+
     }
 
 
-//TODO finish scoping out view Pet List and create Tests.
-    public void getviewPetList(List<String> petTypes, List<String> petNames){
+    public Pet[] getPets() {
+        int size = pets.size();
+        Pet[] petArray = new Pet[size];
+        for (int i = 0; i < pets.size(); i++) {
+            Pet currentPet = pets.get(i);
+            petArray[i] = currentPet;
 
-            for (Integer i = 0; i <petTypes.size(); i++){
-                petLists.put(petTypes.get(i), petNames.get(i));
         }
+        return petArray;
+
+    }
+
+
+    public void add(Pet pet) {
+        pets.add(pet);
+
+    }
+
+
+    public Pet createPet(String petType, String petName) {
+        Pet pet = null;
+        switch (petType.toLowerCase()) {
+            case "bird":
+                pet = new Cat(petName);
+                break;
+
+            case "dog":
+                pet = new Dog(petName);
+                break;
+
+            case "snake":
+                pet = new Reptile(petName);
+                break;
+
+            case "cat":
+                pet = new Cat(petName);
+                break;
+
+        }
+        return pet;
 
     }
 
 }
 
-
-
-//Originally I had a big function in the middle of Application but I remembered that I don't want face cake.
-//Attempting to break it down into smaller pieces so that I can see the whole thing. So far no red.
 
