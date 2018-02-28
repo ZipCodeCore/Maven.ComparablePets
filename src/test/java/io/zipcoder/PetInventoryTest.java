@@ -1,9 +1,6 @@
 package io.zipcoder;
 
-import io.zipcoder.pets.Cat;
-import io.zipcoder.pets.Dog;
-import io.zipcoder.pets.Otter;
-import io.zipcoder.pets.Pet;
+import io.zipcoder.pets.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -109,16 +106,13 @@ public class PetInventoryTest {
         petListTest.addPet("cat", "Felix");
         // from: Zina, Felix(cat), Arnold, Felix (otter), Clubber
         // to: Arnold, Clubber, Felix (cat), Felix (otter), Zina
-
-        petListTest.sortPetsByName();
-
         String expected = "Meow!";
-        String actual = petListTest.getAllPets().get(2).speak();
+        String actual = petListTest.sortedPetsByName().get(2).speak();
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void sortPetsByTypeTest() {
+    public void sortPetsByTypeTest1() {
         petListTest.addPet("cat", "Zina");
         petListTest.addPet("otter", "Felix");
         petListTest.addPet("dog", "Arnold");
@@ -127,10 +121,23 @@ public class PetInventoryTest {
         // from: Zina, Felix (cat), Arnold, Felix (otter), Clubber
         // to: Felix (cat), Zina, Arnold, Clubber, Felix (otter)
 
-        petListTest.sortPetsByType();
-
         String expected = "Clubber";
-        String actual = petListTest.getAllPets().get(3).getName();
+        String actual = petListTest.sortedPetsByType().get(3).getName();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void sortPetsByTypeTest2() {
+        petListTest.addPet("cat", "Zina");
+        petListTest.addPet("otter", "Felix");
+        petListTest.addPet("dog", "Arnold");
+        petListTest.addPet("otter", "Clubber");
+        petListTest.addPet("cat", "Felix");
+        // from: Zina, Felix (cat), Arnold, Felix (otter), Clubber
+        // to: Felix (cat), Zina, Arnold, Clubber, Felix (otter)
+
+        String expected = "Zina";
+        String actual = petListTest.sortedPetsByType().get(1).getName();
         Assert.assertEquals(expected, actual);
     }
 }

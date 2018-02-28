@@ -2,10 +2,9 @@ package io.zipcoder.pets;
 
 public class Otter extends Pet {
 
-    private String otterName;
 
     public Otter(String otterName) {
-        this.otterName = otterName;
+        super(otterName);
     }
 
 
@@ -14,13 +13,5 @@ public class Otter extends Pet {
         return "Muahaha";
     }
 
-    public void setName(String anOtterName) {
-        this.otterName=anOtterName;
-    }
-
-    public String getName() {
-
-        return this.otterName;
-    }
 
 }

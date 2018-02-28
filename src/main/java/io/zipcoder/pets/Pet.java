@@ -1,9 +1,12 @@
 package io.zipcoder.pets;
 
-abstract public class Pet implements PetBehavior, Comparable<Pet>{
+abstract public class Pet implements PetBehavior, Comparable<Pet> {
 
     private String name;
 
+    public Pet(String aName) {
+        this.name = aName;
+    }
 
     public String speak() {
         return null;
@@ -13,30 +16,29 @@ abstract public class Pet implements PetBehavior, Comparable<Pet>{
         return this.name;
     }
 
-    public void setName(String aPetName) {
-
+    public void setName(String aName) {
+        this.name = aName;
     }
 
     @Override
-    public int compareTo(Pet anotherPet){
+    public int compareTo(Pet anotherPet) {
+        String otherPetName = anotherPet.getName();
+        int result = -(otherPetName.compareTo(name));
+        boolean sameName = (result == 0);
+        if (sameName) {
+            Class otherPetClass = anotherPet.getClass();
+            String otherPetClassName = otherPetClass.getSimpleName();
 
-//        if(this.getName().compareTo(anotherPet.getName()) == 0) {
-//            return this.getClass().getSimpleName().compareTo(anotherPet.getClass().getSimpleName());
-//        } else {
-//            return this.getName().compareTo(anotherPet.getName());
-//        }
+            Class thisPetClass = this.getClass();
+            String thisPetClassName = thisPetClass.getSimpleName();
 
-
-        if (getName().compareTo(anotherPet.getName()) > 0) {
-            return 1;
-        } else if (getName().compareTo(anotherPet.getName()) < 0) {
-            return -1;
-        } else {
-            return getClass().getSimpleName().compareTo(getClass().getSimpleName());
+            result = -(otherPetClassName.compareTo(thisPetClassName));
         }
-
-
+        return result;
     }
+
+
+
 
 
 }

@@ -1,9 +1,6 @@
 package io.zipcoder;
 
-import io.zipcoder.pets.Cat;
-import io.zipcoder.pets.Dog;
-import io.zipcoder.pets.Otter;
-import io.zipcoder.pets.Pet;
+import io.zipcoder.pets.*;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -119,12 +116,25 @@ public class PetInventory {
         return allPets;
     }
 
-    public void sortPetsByName() {
-        Collections.sort(getAllPets());
+    public ArrayList<Pet> sortedPetsByName() {
+
+        ArrayList<Pet> allPets = getAllPets();
+
+        Collections.sort(allPets);
+
+        return allPets;
     }
 
-    public void sortPetsByType() {
-        Collections.sort(getAllPets());
+    public ArrayList<Pet> sortedPetsByType() {
+
+        Compare comp = new Compare();
+
+        ArrayList<Pet> allPets = getAllPets();
+
+        Collections.sort(allPets, comp);
+
+        return allPets;
+
     }
 
 
