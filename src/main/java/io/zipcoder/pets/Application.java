@@ -3,6 +3,8 @@ package io.zipcoder.pets;
 import io.zipcoder.pets.Pets;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Application {
@@ -43,6 +45,14 @@ public class Application {
         return petString;
     }
 
+    public ArrayList<Pets> sortPetsByType(){
+        Collections.sort(petList, Comparator.comparing(Pets::getType).thenComparing(Pets::getName));
+        return petList;
+    }
+    public ArrayList<Pets> sortPetsByName(){
+        Collections.sort(petList, Comparator.comparing(Pets::getName).thenComparing(Pets::getType));
+        return petList;
+    }
 
 
 }

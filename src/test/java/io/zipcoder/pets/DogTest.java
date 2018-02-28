@@ -14,6 +14,14 @@ public class DogTest {
     }
 
     @Test
+    public void testGetType(){
+        Dog dog = new Dog();
+        String expected = "dog";
+        String actual = dog.getType();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
     public void testSpeak() {
         Dog dog = new Dog("Sandy");
         String expected = "Woof";

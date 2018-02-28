@@ -2,17 +2,27 @@ package io.zipcoder.pets;
 
 import java.util.Comparator;
 
-public class Pets implements Comparable<Pets>, Comparator<Pets> {
+public class Pets{
 
     private String name;
+    private String type;
 
     public Pets() {
         this.name = "";
+        this.type= type;
     }
 
     public Pets(String name) {
         this.name = name;
+        this.type = type;
 
+    }
+    public void setType() {
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public void setName(String name) {
@@ -27,21 +37,7 @@ public class Pets implements Comparable<Pets>, Comparator<Pets> {
         return null;
     }
 
-    @Override
-    public int compareTo(Pets o) {
-        int comp = 0;
-        if (this.getName().equalsIgnoreCase(o.getName())) {
-            comp = this.toString().compareTo(o.toString());
-        } else {
-            comp = this.getName().compareTo(o.getName());
-        }
-        return comp;
-    }
 
 
-    @Override
-    public int compare(Pets o1, Pets o2) {
-       return 0;
-    }
 }
 

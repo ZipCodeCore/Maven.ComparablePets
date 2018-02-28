@@ -14,6 +14,13 @@ public class ParrotTest {
     }
 
     @Test
+    public void testGetType(){
+        Parrot parrot = new Parrot();
+        String expected = "parrot";
+        String actual = parrot.getType();
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
     public void speakTest() {
         //given
         Parrot parrot = new Parrot("Id");
