@@ -1,14 +1,11 @@
-package io.zipcoder;
+package io.zipcoder.pets;
 
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import java.lang.reflect.Array;
-import java.util.*;
-
 public class Application {
-    ArrayList<Pet> pets = new ArrayList<Pet>();
+    public ArrayList<Pet> pets = new ArrayList<Pet>();
     int numPet;
 
     public String showPetList(ArrayList<Pet> pets) {
@@ -40,8 +37,7 @@ public class Application {
     public void addPet(String typeOfPet, String petName) {
             Pet p;
             if (typeOfPet.equalsIgnoreCase("dog")) {
-                p = new Dog(petName);
-                pets.add(p);
+                pets.add(new Dog(petName));
             } else if (typeOfPet.equalsIgnoreCase("cat")) {
                 p = new Cat(petName);
                 pets.add(p);
@@ -52,7 +48,6 @@ public class Application {
                 System.out.println("We do not condone that type of pet");
             }
         }
-
 }
 
 

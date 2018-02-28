@@ -1,6 +1,5 @@
 package io.zipcoder.pets;
 
-import io.zipcoder.Fish;
 import org.junit.Assert;
 import org.junit.Test;
 

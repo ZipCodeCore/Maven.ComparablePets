@@ -1,4 +1,4 @@
-package io.zipcoder;
+package io.zipcoder.pets;
 
 public abstract class Pet implements Comparable<Pet>{
     public String name;

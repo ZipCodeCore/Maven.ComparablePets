@@ -2,17 +2,14 @@ package io.zipcoder.pets;
 
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class PetComparatorTest {
+public class PetTest {
 
     @Test
-    public void petComparatorTest(){
+    public void sortPetTest(){
         Application test = new Application();
-        PetComparator petComparator = new PetComparator();
-
         ArrayList<Pet> petTest = new ArrayList<Pet>();
         Cat cat1 = new Cat("Apple");
         Dog dog2 = new Dog("Apple");
@@ -22,8 +19,7 @@ public class PetComparatorTest {
         petTest.add(dog2);
         petTest.add(dog1);
         petTest.add(fish1);
-
-        Collections.sort(petTest, petComparator );
+        Collections.sort(petTest);
         String expected = "Apple : Meow!\n" +
                 "Apple : Woof!\n" +
                 "Bob : Woof!\n" +
