@@ -44,12 +44,5 @@ public class Application {
     }
 
 
-public static void main(String[] args) {
-        Application app = new Application();
-        String x = app.askForPets();
-        ArrayList<Pets> y = app.createPetList(x);
-        String xyz = app.petsToString();
-    System.out.println(xyz);
-}
 
 }

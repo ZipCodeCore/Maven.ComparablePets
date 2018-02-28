@@ -19,7 +19,6 @@ public class Parrot extends Pets {
 
     @Override
     public String getName() {
-
         return super.getName();
     }
 
@@ -27,4 +26,6 @@ public class Parrot extends Pets {
     public String speak() {
         return "Hello";
     }
+
+
 }

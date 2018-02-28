@@ -28,4 +28,11 @@ public class ApplicationTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void testPetsCompare(){
+        //Given
+        Application app = new Application();
+
+    }
+
 }
