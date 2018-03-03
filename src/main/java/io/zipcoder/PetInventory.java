@@ -12,7 +12,7 @@ public class PetInventory {
     protected HashMap<String,ArrayList<Pet>> pets;
 
     public PetInventory() {
-        pets = new HashMap<String, ArrayList<Pet>>();
+        this.pets = new HashMap<String, ArrayList<Pet>>();
 
     }
 
