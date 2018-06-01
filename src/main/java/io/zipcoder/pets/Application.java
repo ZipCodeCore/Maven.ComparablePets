@@ -17,42 +17,50 @@ public class Application {
 
     }
 
-    public String askForPets() {
+    public int askForPets() {
         Scanner in = new Scanner(System.in);
         System.out.println("Please input the number of pets you own:");
-        int numberOfPets = in.nextInt();
-        System.out.println("Please input each pet by type of pet followed by their name, no " +
-                "punctuation marks please:");
-        String x = in.nextLine();
-        String allPets = in.nextLine();
-        return allPets;
+        return in.nextInt();
     }
 
-    public ArrayList<Pets> createPetList(String allPets) {
-        String[] petArrayString = allPets.split(" ");
-        for(int i = 0; i< petArrayString.length; i+=2) {
-            petList.add(PetFactory.createPets(petArrayString[i], petArrayString[i+1]));
+    public ArrayList<Pets> createPetList() {
+        int numberOfPets = askForPets();
+        Scanner scan = new Scanner(System.in);
+        for (int i = 0; i < numberOfPets; i++) {
+            System.out.println("Please enter type of pet for pet # " + (i + 1));
+            String type = scan.nextLine();
+            System.out.println("Please enter pet's name");
+            String name = scan.nextLine();
+            petList.add(PetFactory.createPets(type, name));
         }
         return petList;
     }
 
-    public String petsToString() {
-        String petString = "";
-        for(int i=0; i<petList.size(); i++) {
-            petString += "My name is " +  petList.get(i).getName() + " and I say " +
-                    petList.get(i).speak() + ".  ";
+    public String petsToString(ArrayList<Pets> petList) {
+        StringBuilder petString = new StringBuilder();
+        for (Pets pet: petList) {
+            petString.append("My name is ")
+                    .append(pet.getName())
+                    .append(" and I say ")
+                    .append(pet.speak())
+                    .append(".  ");
         }
-        return petString;
+        return petString.toString();
+
     }
 
-    public ArrayList<Pets> sortPetsByType(){
+    public ArrayList<Pets> sortPetsByType() {
         Collections.sort(petList, Comparator.comparing(Pets::getType).thenComparing(Pets::getName));
         return petList;
     }
-    public ArrayList<Pets> sortPetsByName(){
+
+    public ArrayList<Pets> sortPetsByName() {
         Collections.sort(petList, Comparator.comparing(Pets::getName).thenComparing(Pets::getType));
         return petList;
     }
 
-
 }
+
+
+
+

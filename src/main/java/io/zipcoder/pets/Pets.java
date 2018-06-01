@@ -9,15 +9,15 @@ public class Pets{
 
     public Pets() {
         this.name = "";
-        this.type= type;
+        this.type= "";
     }
 
     public Pets(String name) {
         this.name = name;
-        this.type = type;
+        this.type = "";
 
     }
-    public void setType() {
+    public void setType(String type) {
         this.type = type;
     }
 

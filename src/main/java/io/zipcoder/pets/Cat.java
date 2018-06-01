@@ -6,7 +6,7 @@ public class Cat extends Pets {
     private String type;
 
     public Cat() {
-        this.name = name;
+        this.name = "";
         this.type = "cat";
     }
 
@@ -16,7 +16,7 @@ public class Cat extends Pets {
     }
 
     @Override
-    public void setType() {
+    public void setType(String type) {
         this.type = "cat";
     }
 

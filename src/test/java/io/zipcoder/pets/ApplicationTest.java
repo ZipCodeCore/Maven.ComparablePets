@@ -14,8 +14,8 @@ public class ApplicationTest {
     public void testCreatePetList(){
         Application app = new Application();
         Pets dog = PetFactory.createPets("dog", "Sandy");
-        String expected = dog.getName();
-        ArrayList<Pets> pets = app.createPetList("dog Sandy cat Sally");
+        String expected = "Sandy";
+        ArrayList<Pets> pets = new ArrayList<>(Arrays.asList(dog));
         String actual = pets.get(0).getName();
         Assert.assertEquals(expected, actual);
     }
@@ -23,10 +23,10 @@ public class ApplicationTest {
     @Test
     public void testPetsToString(){
         Application app = new Application();
-        String expected = "My name is Sandy and I say Woof";
+        String expected = "My name is Sandy and I say Woof.  ";
         Pets dog = PetFactory.createPets("dog", "Sandy");
-        ArrayList<Pets> pets = app.createPetList("dog Sandy");
-        String actual = app.petsToString();
+        ArrayList<Pets> pets = new ArrayList<>(Arrays.asList(dog));
+        String actual = app.petsToString(pets);
         Assert.assertEquals(expected, actual);
     }
 
