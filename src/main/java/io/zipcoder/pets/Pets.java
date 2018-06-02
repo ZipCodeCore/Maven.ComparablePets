@@ -2,7 +2,7 @@ package io.zipcoder.pets;
 
 import java.util.Comparator;
 
-public class Pets{
+public abstract class Pets{
 
     private String name;
     private String type;
@@ -18,6 +18,7 @@ public class Pets{
 
     }
     public void setType(String type) {
+
         this.type = type;
     }
 
@@ -33,9 +34,7 @@ public class Pets{
         return this.name;
     }
 
-    public String speak() {
-        return null;
-    }
+    public abstract String speak();
 
 
 
