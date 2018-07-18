@@ -15,8 +15,9 @@ public class CatTest {
 
     @Test
     public void testGetType(){
-        Cat cat = new Cat();
+        Cat cat = new Cat("Sally");
         String expected = "cat";
+        cat.setType("cat");
         String actual = cat.getType();
         Assert.assertEquals(expected, actual);
     }

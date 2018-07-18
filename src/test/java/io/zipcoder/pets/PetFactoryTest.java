@@ -7,7 +7,6 @@ public class PetFactoryTest {
 
     @Test
     public void testCreatePets() {
-        PetFactory factory = new PetFactory();
         String expected = "Sandy";
         Pets dog = PetFactory.createPets("dog", "Sandy");
         String actual = dog.getName();

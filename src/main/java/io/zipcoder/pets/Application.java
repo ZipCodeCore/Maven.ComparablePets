@@ -17,6 +17,14 @@ public class Application {
 
     }
 
+    public void setPetList(ArrayList<Pets> petList) {
+        this.petList = petList;
+    }
+
+    public ArrayList<Pets> getPetList() {
+        return petList;
+    }
+
     public int askForPets() {
         Scanner in = new Scanner(System.in);
         System.out.println("Please input the number of pets you own:");
@@ -33,10 +41,13 @@ public class Application {
             String name = scan.nextLine();
             petList.add(PetFactory.createPets(type, name));
         }
+        setPetList(petList);
         return petList;
     }
 
-    public String petsToString(ArrayList<Pets> petList) {
+    @Override
+    public String toString() {
+        ArrayList<Pets> petList = getPetList();
         StringBuilder petString = new StringBuilder();
         for (Pets pet: petList) {
             petString.append("My name is ")
