@@ -57,7 +57,7 @@ public class PetLodge {
     public static ArrayList sortTypeBeforeName(ArrayList<Pets> pets) {
         Collections.sort(pets, new PetTypeSorting());
         Collections.sort(pets, new PetNameSorting());
-        return listOPets;
+        return pets;
     }
     public Pets[] getPets() {
         return this.pets;
