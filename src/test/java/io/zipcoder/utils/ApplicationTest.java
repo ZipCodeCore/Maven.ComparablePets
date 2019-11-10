@@ -1,4 +1,4 @@
-package io.zipcoder;
+package io.zipcoder.utils;
 
 
 public class ApplicationTest {
