@@ -1,4 +1,4 @@
-package io.zipcoder.polymorphism.pets;
+package io.zipcoder.pets;
 
 public abstract class Pet {
 

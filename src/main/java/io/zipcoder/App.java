@@ -1,9 +1,9 @@
-package io.zipcoder.polymorphism;
+package io.zipcoder;
 
-import io.zipcoder.polymorphism.pets.Cat;
-import io.zipcoder.polymorphism.pets.Dog;
-import io.zipcoder.polymorphism.pets.Horse;
-import io.zipcoder.polymorphism.pets.Pet;
+import io.zipcoder.pets.Cat;
+import io.zipcoder.pets.Dog;
+import io.zipcoder.pets.Horse;
+import io.zipcoder.pets.Pet;
 
 import java.util.ArrayList;
 import java.util.Arrays;

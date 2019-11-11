@@ -1,4 +1,4 @@
-package io.zipcoder.polymorphism;
+package io.zipcoder;
 
 import java.util.Scanner;
 import java.io.PrintStream;
