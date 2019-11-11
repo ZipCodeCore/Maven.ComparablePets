@@ -1,6 +1,6 @@
 package io.zipcoder.pets;
 
-public class Dog extends Pet {
+public class Dog extends Pet implements Comparable<Pet>{
 
     public Dog (String name){
         super.setName(name);
@@ -15,4 +15,9 @@ public class Dog extends Pet {
     public String speak(){
         return "Woof";
     }
+
+    public int compareTo(Pet o) {
+        return 0;
+    }
 }
+
