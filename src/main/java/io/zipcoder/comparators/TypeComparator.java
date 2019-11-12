@@ -1,10 +1,11 @@
 package io.zipcoder.comparators;
 
 import io.zipcoder.pets.Pet;
-
 import java.util.Comparator;
 
 public class TypeComparator implements Comparator<Pet> {
+
+    
     public int compare(Pet petOne, Pet petTwo) {
         int comparePet =0;
 

@@ -1,6 +1,8 @@
 package io.zipcoder.pets;
 
-public abstract class Pet {
+import java.util.Comparator;
+
+public abstract class Pet implements Comparable<Pet>{
 
     private String name;
 

@@ -1,8 +1,7 @@
 package io.zipcoder.pets;
 
-import java.util.Arrays;
 
-public class Horse extends Pet implements Comparable<Pet>{
+public class Horse extends Pet{
 
 
     public Horse(String name){
@@ -18,6 +17,7 @@ public class Horse extends Pet implements Comparable<Pet>{
     public String speak(){
         return "Neigh";
     }
+
 
     public int compareTo(Pet o) {
         return 0;
